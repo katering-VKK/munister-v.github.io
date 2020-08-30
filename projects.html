@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+<meta name="apple-mobile-web-app-title" content="CodePen">
+<link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+<link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+<meta charset="utf-8">
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<title>CodePen - Minimalistic portfolio</title>
+<link rel="stylesheet" media="screen" href="https://static.codepen.io/assets/fullpage/fullpage-4de243a40619a967c0bf13b95e1ac6f8de89d943b7fc8710de33f681fe287604.css" />
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400italic,700,700italic,900,900italic" rel="stylesheet" />
+<link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+<meta name="apple-mobile-web-app-title" content="CodePen">
+<link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+<link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+<title>CodePen - Minimalistic portfolio</title>
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+<style>
+    html { font-size: 15px; }
+    html, body { margin: 0; padding: 0; min-height: 100%; }
+    body { height:100%; display: flex; flex-direction: column; }
+    .referer-warning {
+      background: black;
+      box-shadow: 0 2px 5px rgba(0,0,0, 0.5);
+      padding: 0.75em;
+      color: white;
+      text-align: center;
+      font-family: 'Lato', 'Lucida Grande', 'Lucida Sans Unicode', Tahoma, Sans-Serif;
+      line-height: 1.2;
+      font-size: 1rem;
+      position: relative;
+      z-index: 2;
+    }
+    .referer-warning h1 { font-size: 1.2rem; margin: 0; }
+    .referer-warning a { color: #56bcf9; } /* $linkColorOnBlack */
+  </style>
+</head>
+<body class="">
+<div class="referer-warning">
+<h1>⚠️ Do not enter passwords or personal information on this page. ⚠️</h1>
+This is a code demo posted by a web developer on <a href="https://codepen.io">codepen.io</a>.
+<br />
+A referer from CodePen is required to render this page view, and your browser is not sending one (<a href="https://blog.codepen.io/2017/10/05/regarding-referer-headers/" target="_blank">more details</a>).</h1>
+</div>
+<div id="result-iframe-wrap" role="main">
+<iframe id="result" srcdoc="
+<!DOCTYPE html>
+<html lang=&quot;en&quot; >
+
+<head>
+
+  <meta charset=&quot;UTF-8&quot;>
+  
+<link rel=&quot;apple-touch-icon&quot; type=&quot;image/png&quot; href=&quot;https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png&quot; />
+<meta name=&quot;apple-mobile-web-app-title&quot; content=&quot;CodePen&quot;>
+
+<link rel=&quot;shortcut icon&quot; type=&quot;image/x-icon&quot; href=&quot;https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico&quot; />
+
+<link rel=&quot;mask-icon&quot; type=&quot;&quot; href=&quot;https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg&quot; color=&quot;#111&quot; />
+
+
+  <title>CodePen - Minimalistic portfolio</title>
+      <meta charset=&quot;utf-8&quot;>
+    <meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+    <meta name=&quot;description&quot; content=&quot;Portfolio&quot;>
+    <title>Selhar | Fullstack programmer, pentester</title>
+
+  
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.3.2/css/bulma.min.css'>
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+  
+<style>
+/**************
+    Globals
+***************/
+
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:100,300,400,600');
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+section {
+    position: relative;
+}
+
+body {
+    font-family: 'Fira Sans', sans-serif;
+    padding-bottom: 20px;
+}
+
+
+/**************
+    Splash
+***************/
+
+#splash {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#splash header {
+    text-align: center;
+    width: 40%;
+    margin: 0 auto;
+}
+
+#splash header *:hover {
+    cursor: default;
+}
+
+.title.is-1 {
+    letter-spacing: 6px;
+}
+
+.title-lines {
+    width: 0;
+    margin: 0;
+}
+
+.title-lines:first-of-type {
+    margin-bottom: 1.5rem;
+}
+
+.title-lines:last-of-type {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle.is-3 {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+}
+
+.scroll-button {
+    position: absolute;
+    bottom: 2rem;
+    width: 100%;
+    text-align: center;
+}
+
+.button:active,
+.button:focus {
+    border: none;
+    box-shadow: none;
+}
+
+.scroll-button a {
+    border: none;
+}
+
+.scroll-button .icon {
+    font-size: 2rem;
+}
+
+
+/**************
+    Gallery
+***************/
+
+#gallery {
+    padding-top: 10%
+}
+
+.image-node {
+    width: 1064px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.image.is-256x256 {
+    padding: 5px;
+}
+
+.hover-layer {
+    color: white;
+    position: absolute;
+    width: 256px;
+    height: 256px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.tags {
+    opacity: 0;
+}
+
+.tag {
+    margin: 5px;
+}
+
+
+/**************
+     Footer
+***************/
+
+.contact {
+    text-align: center;
+}
+
+footer {
+    color: #333;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 2rem;
+}
+
+footer a {
+    margin: 15px;
+    color: #333;
+}
+
+footer a:focus {
+    outline: none;
+}
+
+footer a:hover {
+    color: #666;
+}
+
+
+/**********************
+    Responsivity, if that word exists, maybe it's responsiveness. Maybe neither.
+**********************/
+
+@media screen and (max-width: 550px) {
+    .image-node {
+        width: 264px;
+    }
+}
+
+@media screen and (min-width: 551px) and (max-width: 803px) {
+    .image-node {
+        width: 532px;
+    }
+}
+
+@media screen and (min-width: 804px) and (max-width: 1063px) {
+    .image-node {
+        width: 798px;
+    }
+}
+
+@media screen and (max-width: 1180px) {
+    .title.is-1 {
+        font-size: 2rem;
+    }
+    .subtitle.is-3 span {
+        font-size: 1.5rem;
+    }
+    #splash header {
+        width: 90%;
+    }
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage(&quot;resize&quot;, &quot;*&quot;);
+  }
+</script>
+
+
+</head>
+
+<body translate=&quot;no&quot; >
+  <!-- 
+    Author: Selhar
+    Date: 2017
+    Contact: selhar@protonmail.com
+    License: GPL
+-->
+
+<!doctype html>
+<html lang=&quot;en&quot;>
+
+<head>
+    <meta charset=&quot;utf-8&quot;>
+    <meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+    <meta name=&quot;description&quot; content=&quot;Portfolio&quot;>
+    <title>Selhar | Fullstack programmer</title>
+
+    <link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/bulma/0.3.2/css/bulma.min.css&quot;>
+    <link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css&quot;>
+    <link rel=&quot;stylesheet&quot; href=&quot;index.css&quot;>
+</head>
+
+<body>
+    <section id=&quot;splash&quot;>
+        <header>
+            <hr class=&quot;title-lines&quot;>
+            <h1 class=&quot;title is-1 is-marginless&quot;>Selhar</h1>
+            <hr class=&quot;title-lines&quot;>
+            <h3 class=&quot;subtitle is-3&quot;>
+                <span>back-end</span>
+                <span>| Data visualization</span>
+                <span>| Front-end</span>
+                <span>| APIs &amp; microservices</span>
+            </h3>
+        </header>
+        <div class=&quot;scroll-button&quot; id=&quot;arrow-button&quot;>
+            <a class=&quot;button&quot;>
+                <span class=&quot;icon&quot;><i class=&quot;fa  fa-angle-double-down&quot;></i></span>
+            </a>
+        </div>
+    </section>
+    <section id=&quot;gallery&quot;>
+        <div class=&quot;image-node&quot;>
+            <figure class=&quot;image is-256x256&quot;>
+                <a href=&quot;http://selhar-imageboard.glitch.me/&quot; target=&quot;_blank&quot; class=&quot;hover-layer&quot; target=&quot;_blank&quot;>
+                    <div class=&quot;tags&quot;>
+                        <span class=&quot;tag&quot;>Node</span>
+                        <span class=&quot;tag&quot;>Express</span>
+                        <span class=&quot;tag&quot;>Mongo</span>
+                        <span class=&quot;tag&quot;>Mongoose</span>
+                        <span class=&quot;tag&quot;>Milligram</span>
+                        <span class=&quot;tag&quot;>Chai</span>
+                        <span class=&quot;tag&quot;>Mocha</span>
+                    </div>
+                </a>
+                <img src=&quot;https://res.cloudinary.com/selhar/image/upload/v1494673614/textboard_oacdhk.png&quot;>
+            </figure>
+            <figure class=&quot;image is-256x256&quot;>
+                <a href=&quot;https://codepen.io/Selhar/full/KWvMqY/&quot; target=&quot;_blank&quot; class=&quot;hover-layer&quot;>
+                    <div class=&quot;tags&quot;>
+                        <span class=&quot;tag&quot;>D3.js</span>
+                    </div>
+                </a>
+                <img src=&quot;https://res.cloudinary.com/selhar/image/upload/v1494673614/heatmap_ylgwon.png&quot;>
+            </figure>
+            <figure class=&quot;image is-256x256&quot;>
+                <a href=&quot;https://codepen.io/Selhar/full/WRqZjr/&quot; target=&quot;_blank&quot; class=&quot;hover-layer&quot; target=&quot;_blank&quot;>
+                    <div class=&quot;tags&quot;>
+                        <span class=&quot;tag&quot;>GSAP</span>
+                        <span class=&quot;tag&quot;>pure.css</span>
+                    </div>
+                </a>
+                <img src=&quot;https://res.cloudinary.com/selhar/image/upload/v1488597367/6_tb85cx.png&quot;>
+            </figure>
+            <figure class=&quot;image is-256x256&quot;>
+                <a href=&quot;https://selhar-calculator.surge.sh/&quot; href=&quot;_blank&quot; class=&quot;hover-layer&quot;>
+                    <div class=&quot;tags&quot;>
+                        <span class=&quot;tag&quot;>React</span>
+                        <span class=&quot;tag&quot;>Redux</span>
+                        <span class=&quot;tag&quot;>Webpack</span>
+                        <span class=&quot;tag&quot;>Sass</span>
+                    </div>
+                </a>
+                <img src=&quot;https://res.cloudinary.com/selhar/image/upload/v1494673614/calculator_e1slrk.png&quot;>
+            </figure>
+            <figure class=&quot;image is-256x256&quot;>
+                <a href=&quot;https://selhar-exercise-tracker.glitch.me/&quot; target=&quot;_blank&quot; class=&quot;hover-layer&quot;>
+                    <div class=&quot;tags&quot;>
+                        <span class=&quot;tag&quot;>Node</span>
+                        <span class=&quot;tag&quot;>Express</span>
+                        <span class=&quot;tag&quot;>Mongo</span>
+                        <span class=&quot;tag&quot;>Mongoose</span>
+                        <span class=&quot;tag&quot;>Milligram</span>
+                        <span class=&quot;tag&quot;>Chai</span>
+                        <span class=&quot;tag&quot;>Mocha</span>
+                    </div>
+                </a>
+                <img src=&quot;https://res.cloudinary.com/selhar/image/upload/v1494673614/exercise-tracker_vzt3w3.png&quot;>
+            </figure>
+            <figure class=&quot;image is-256x256&quot;>
+                <a href=&quot;https://codepen.io/Selhar/full/RpRdpr/&quot; target=&quot;_blank&quot; class=&quot;hover-layer&quot;>
+                    <div class=&quot;tags&quot;>
+                        <span class=&quot;tag&quot;>D3.JS</span>
+                    </div>
+                </a>
+                <img src=&quot;https://res.cloudinary.com/selhar/image/upload/v1494673614/chloroplet_j7zgk6.png&quot;>
+            </figure>
+            <figure class=&quot;image is-256x256&quot;>
+                <a href=&quot;https://codepen.io/Selhar/full/KWVwOq/&quot; target=&quot;_blank&quot; class=&quot;hover-layer&quot;>
+                    <div class=&quot;tags&quot;>
+                        <span class=&quot;tag&quot;>Bulma</span>
+                        <span class=&quot;tag&quot;>GSAP</span>
+                    </div>
+                </a>
+                <img src=&quot;https://res.cloudinary.com/selhar/image/upload/v1494673614/documentation_gc8air.png&quot;>
+            </figure>
+            <figure class=&quot;image is-256x256&quot;>
+                <a href=&quot;https://selhar-pomodoro.surge.sh/&quot; target=&quot;_blank&quot; class=&quot;hover-layer&quot;>
+                    <div class=&quot;tags&quot;>
+                        <span class=&quot;tag&quot;>React</span>
+                        <span class=&quot;tag&quot;>Redux</span>
+                        <span class=&quot;tag&quot;>Webpack</span>
+                        <span class=&quot;tag&quot;>Sass</span>
+                    </div>
+                </a>
+                <img src=&quot;https://res.cloudinary.com/selhar/image/upload/v1494674599/pomodoro_fkpcme.png&quot;>
+            </figure>
+        </div>
+
+    </section>
+    <footer>
+        <div class=&quot;contact&quot;>
+            <a href=&quot;https://github.com/Selhar/freecodecamp/tree/master/responsive-web-design/personal-portfolio-webpage&quot; target=&quot;_blank&quot;>
+                <span class=&quot;icon&quot;><i class=&quot;fa fa-github&quot;></i></span>
+            </a>
+            <a href=&quot;https://codepen.io/Selhar/#&quot; target=&quot;_blank&quot;>
+                <span class=&quot;icon&quot;><i class=&quot;fa fa-codepen&quot;></i></span>
+            </a>
+            <a href=&quot;https://selhar-showcase.surge.sh&quot; target=&quot;_blank&quot;>
+                <span class=&quot;icon&quot;><i class=&quot;fa fa-free-code-camp&quot;></i></span>
+            </a>
+        </div>
+    </footer>
+</body>
+<script src=&quot;index.js&quot;></script>
+<script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenLite.min.js&quot;></script>
+<script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TimelineMax.min.js&quot;></script>
+<script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/plugins/CSSPlugin.min.js&quot;></script>
+<script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/plugins/ScrollToPlugin.min.js&quot;></script>
+
+</html>
+    <script src=&quot;https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js&quot;></script>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenLite.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TimelineMax.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/plugins/CSSPlugin.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/plugins/ScrollToPlugin.min.js'></script>
+  
+      <script id=&quot;rendered-js&quot; >
+ready(() => {
+
+  animate_title();
+  animate_arrow();
+  animate_gallery_layer();
+
+});
+
+function animate_gallery_layer() {
+  let gallery = document.getElementsByClassName(&quot;image-node&quot;)[0].children;
+
+  for (let figure of gallery) {
+
+    let hover_layer = figure.children[0];
+    let tags = hover_layer.children[0];
+    let from = { backgroundColor: &quot;rgba(0,0,0,0.5)&quot; };
+    let to = { backgroundColor: &quot;rgba(0,0,0,0.0)&quot; };
+    let clickCount = 0;
+
+    figure.addEventListener(&quot;click&quot;, () => {
+      TweenLite.to(hover_layer, 0.3, from);
+    });
+
+    figure.addEventListener(&quot;mouseover&quot;, () => {
+      TweenLite.to(hover_layer, 0.3, from);
+      TweenLite.to(tags, 0.3, { opacity: 1 });
+    });
+    figure.addEventListener(&quot;mouseout&quot;, () => {
+      TweenLite.to(hover_layer, 0.3, to);
+      TweenLite.to(tags, 0.3, { opacity: 0 });
+    });
+  }
+
+}
+
+function animate_title() {
+  let title_lines = document.getElementsByClassName(&quot;title-lines&quot;);
+  for (let line of title_lines) {
+    TweenLite.to(line, 5, { width: &quot;100%&quot; });
+  }
+}
+
+function animate_arrow() {
+  let timeline = new TimelineMax({ repeat: -1 });
+  let arrow = document.getElementById(&quot;arrow-button&quot;);
+
+  timeline.add(TweenLite.to(arrow, 0.5, { bottom: &quot;1rem&quot;, ease: Power0.easeNone }));
+  timeline.add(TweenLite.to(arrow, 0.5, { bottom: &quot;2rem&quot;, ease: Power0.easeNone }));
+  scroll_arrow();
+}
+
+function scroll_arrow() {
+  let arrow = document.getElementById(&quot;arrow-button&quot;);
+  arrow.addEventListener(&quot;click&quot;, () => {
+    TweenLite.to(window, 1.5, { scrollTo: &quot;#gallery&quot; });
+  });
+
+}
+
+function get_css_property(element, property) {
+  let sheet = window.getComputedStyle(element);
+  return sheet.getPropertyValue(property);
+}
+
+function ready(fn) {
+  if (document.readyState != 'loading') {
+    fn();
+  } else {
+    document.addEventListener('DOMContentLoaded', fn);
+  }
+}
+//# sourceURL=pen.js
+    </script>
+
+  
+
+</body>
+
+</html>
+ 
+" sandbox="allow-downloads allow-forms allow-modals allow-pointer-lock allow-popups allow-presentation  allow-scripts allow-top-navigation-by-user-activation" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; microphone; midi; payment; vr" allowTransparency="true" allowpaymentrequest="true" allowfullscreen="true" class="result-iframe">
+      </iframe>
+</div>
+</body>
+</html>
