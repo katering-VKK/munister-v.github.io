@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+<meta name="apple-mobile-web-app-title" content="CodePen">
+<link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+<link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+<title>CodePen - Minimalistic Portfolio</title>
+<style>
+body {
+  background: #D3D3D3;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+    height: 50px;
+    width: 100%;
+    position: relative;
+    overflow: auto;
+    background-color: #D3D3D3;
+    font-family: 'Bentham', serif;
+    z-index: 99999;
+}
+li a {
+    display: inline block;
+    float: right;
+    padding: 10px;
+    text-align: center;
+    font-size: 20px;
+    text-decoration: none;
+    color: #2b3547;
+}
+li a:hover {
+    text-decoration: none;
+    color: #f1f1f1;
+    background-color: #2b3547;
+}
+#start {
+  float: left;
+  margin: 0px 20px;
+}
+#end {
+  margin: 0px 20px 0px 0px;
+}
+
+img {
+  width: 100%;
+  margin: -10px 0px 0px 0px;
+  z-index: 0;
+  position: relative;
+}
+#about{
+  font-family: 'Bentham', serif;
+  height: 100px;
+  margin: -60% 0% 0% 15%;
+  text-align: justify;
+  position: relative;
+  z-index: 100;
+}
+#about h2 {
+  margin: -20px 0px 0px 0px;
+  font-size: 20px;
+  font-style: italic;
+  text-align: justify;
+  text-justify: inter-word;
+  color: #2b3547;
+}
+#portfolio {
+  font-family: 'Bentham', serif;
+  position: relative;
+  text-align: justify;
+  margin: 15% 0% 0% 70%;
+  z-index: 100;
+}
+#portfolio a {
+  text-decoration: none;
+  color: #2b3547;
+  margin: -15px 0px 0px 0px;
+  font-size: 20px;
+  font-style: italic;
+  text-align: justify;
+  float: left;
+}
+#portfolio a:hover {
+  text-decoration: none;
+  color: #f1f1f1;
+  background: #2b3547;
+}
+#contact {
+  font-family: 'Bentham', serif;
+  z-index: 2;
+  margin: 20% 0% 0% -1%;
+  text-align: center;
+  position: relative;
+  font-size: 20px;
+}
+#contact h1{
+  margin: 0px 0px 10px 0px;
+}
+button{
+  border-radius: 20px;
+  z-index: 100;
+  text-decoration: none;
+  background: #D3D3D3;
+  color: #2b3547;
+  padding: 5px;
+}
+button:hover {
+  text-decoration: none;
+  color: #2b3547;
+  box-shadow: 0 2px #666;
+}
+button a{
+  color: #2b3547;
+  text-decoration: none;
+}
+button a:hover{
+  color: #2b3547;
+  text-decoration: none;
+}
+.divider{
+    width: 40px;
+    height: auto;
+    display: inline-block;
+}
+
+footer {
+  text-align: center;
+  background: #D3D3D3;
+  font-family: 'Bentham', serif;
+  margin: 7.5% 0% 0% 0%;
+}
+footer a {
+  text-decoration: none;
+  color: #2b3547;
+}
+footer a:hover {
+  text-decoration: none;
+  color: #f1f1f1;
+  background-color: #2b3547;
+}
+</style>
+<script>
+  window.console = window.console || function(t) {};
+</script>
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+</head>
+<body translate="no">
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link href='https://fonts.googleapis.com/css?family=Bentham' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+<ul>
+<li id="end">
+<a href="#contact">Contact</a>
+</li>
+<li>
+<a href="#portfolio">Portfolio</a>
+</li>
+<li>
+<a href="#about">About</a>
+</li>
+</ul>
+<a href="https://imgur.com/GP90IhN"><img src="https://40.media.tumblr.com/903a35de64ae23de9bd6593c3a03e3c7/tumblr_o2z8w8PBn11ted1sho1_1280.jpg" title="source: imgur.com" /></a>
+
+<div id="about">
+<h1>Alexey Medvedev<h1>
+<h2>Freelance Web Developer</h2>
+</div>
+
+<div id="portfolio">
+<h1>Portfolio</h1>
+<a href="https://codepen.io/medvedev/full/dMYbeW" target='_blank'>Tribute Page </a>
+</div>
+
+<div id="contact">
+<h1>Contact</h1>
+<button><a href="https://twitter.com/MedvedevTheDev" class="fa fa-fw fa-twitter"></a></button>
+<div class="divider"></div>
+<button><a href="https://www.linkedin.com/in/aomedvedev" class="fa fa-fw fa-linkedin"></a></button>
+<div class="divider"></div>
+<button><a href="https://github.com/theMedvedev" class="fa fa-fw fa-github"></a></button>
+</div>
+<footer>Made with 🍾 by <a href="https://www.freecodecamp.com/themedvedev">Alexey Medvedev</a>
+</footer>
+</body>
+</body>
+</html>
