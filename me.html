@@ -1,355 +1,301 @@
 
-<html lang="en" style="" class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths -webkit-"><head>
+
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
 
   <meta charset="UTF-8">
   
-<link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+<link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
 <meta name="apple-mobile-web-app-title" content="CodePen">
 
-<link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+<link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
 
-<link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
-
-
-  <title>CodePen - CSS3 Creative Resume</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
+<link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
 
 
-  <style media="" data-href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">button,hr,input{overflow:visible}audio,canvas,progress,video{display:inline-block}progress,sub,sup{vertical-align:baseline}html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0} menu,article,aside,details,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}figcaption,figure,main{display:block}figure{margin:1em 40px}hr{box-sizing:content-box;height:0}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative}sub{bottom:-.25em}sup{top:-.5em}audio:not([controls]){display:none;height:0}img{border-style:none}svg:not(:root){overflow:hidden}button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button,input{}button,select{text-transform:none}[type=submit], [type=reset],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:ButtonText dotted 1px}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}[hidden],template{display:none}/*# sourceMappingURL=normalize.min.css.map */</style>
-
+  <title>CodePen - Responsive post grid with a grow effect</title>
   
+  
+  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.2.0/css/all.css'>
   
 <style>
-@font-face {
-  font-family: 'BenchNine';
-  font-style: normal;
-  font-weight: 700;
-  src: local('BenchNine Bold'), local('BenchNine-Bold'), url(https://fonts.gstatic.com/s/benchnine/v9/ahcev8612zF4jxrwMosT6-xhgmy4.ttf) format('truetype');
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700");
+
+body {
+  color: #000;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
 }
-@font-face {
-  font-family: 'Open Sans Condensed';
-  font-style: normal;
-  font-weight: 300;
-  src: local('Open Sans Condensed Light'), local('OpenSansCondensed-Light'), url(https://fonts.gstatic.com/s/opensanscondensed/v15/z7NFdQDnbTkabZAIOl9il_O6KJj73e7Ff1GhDuXMQg.ttf) format('truetype');
+
+.container {
+  max-width: 1335px;
+  margin: 0 auto;
 }
-* {
-  margin: 0;
-  padding: 0;
+
+.grid-row {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+
+.grid-item {
+  height: 550px;
+  flex-basis: 20%;
+  -ms-flex: auto;
+  width: 259px;
+  position: relative;
+  padding: 10px;
   box-sizing: border-box;
 }
-html,
-body {
-  background: black;
-  height: 100%;
-  
+
+.grid-row a {
+  text-decoration: none;
 }
-.container {
+
+.wrapping-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+  color: currentColor;
+}
+
+.grid-item-wrapper {
+  -webkit-box-sizing: initial;
+  -moz-box-sizing: initial;
+  box-sizing: initial;
+  background: #ececec;
+  margin: 0;
+  height: 100%;
   width: 100%;
+  overflow: hidden;
+  -webkit-transition: padding 0.15s cubic-bezier(0.4,0,0.2,1), margin 0.15s cubic-bezier(0.4,0,0.2,1), box-shadow 0.15s cubic-bezier(0.4,0,0.2,1);
+  transition: padding 0.15s cubic-bezier(0.4,0,0.2,1), margin 0.15s cubic-bezier(0.4,0,0.2,1), box-shadow 0.15s cubic-bezier(0.4,0,0.2,1);
+  position: relative;
+}
+
+.grid-item-container {
   height: 100%;
+  width: 100%;
+  position: relative;
 }
-.wrapper {
-  width: 270px;
-  margin: 50px auto;
-  position: Relative;
+
+.grid-image-top {
+  height: 45%;
+  width: 120%;
+  background-size: cover;
+  position: relative;
+  background-position: 50% 50%;
+  left: -10.5%;
+  top: -4.5%;
 }
-.word {
+
+.grid-image-top .centered {
+  text-align: center;
+  transform: translate(-50%, -50%);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 54.5%;
+  left: 50%;
+  width: 60%;
+  height: 60%;
+  background-position: center;
+}
+
+.grid-image-top.rex-ray {
+  background: -webkit-gradient(linear,left top, left bottom,from(#007DB8),to(#00447C));
+  background: -webkit-linear-gradient(#007DB8,#00447C);
+  background: -o-linear-gradient(#007DB8,#00447C);
+  background: linear-gradient(#007DB8,#00447C);
+}
+
+.rex-ray-image {
+  background-image: url(https://thecodeteam.com/wp-content/uploads/2017/08/Rex-Ray-icon-209x300.png);
+}
+
+.grid-image-top.sputnik {
+  background: -webkit-gradient(linear,left top, left bottom,from(#1AA9FB),to(#1785C4));
+  background: -webkit-linear-gradient(#1AA9FB,#1785C4);
+  background: -o-linear-gradient(#1AA9FB,#1785C4);
+  background: linear-gradient(#1AA9FB,#1785C4);
+}
+
+.sputnik-image {
+  background-image: url(https://thecodeteam.com/wp-content/uploads/2017/08/sputnik-1-300x257.png);
+}
+
+.grid-image-top.edgex {
+  background: -webkit-gradient(linear,left top, left bottom,from(#952f4c),to(#3e1a51));
+  background: -webkit-linear-gradient(#952f4c,#3e1a51);
+  background: -o-linear-gradient(#952f4c,#3e1a51);
+  background: linear-gradient(#952f4c,#3e1a51);
+}
+
+.edgex-image {
+  background-image: url(https://thecodeteam.com/wp-content/uploads/2017/08/edge-x-300x287.png);
+}
+
+.grid-image-top.openswitch {
+  background: -webkit-gradient(linear,left top, left bottom,from(#2db89a),to(#00793d));
+  background: -webkit-linear-gradient(#2db89a,#00793d);
+  background: -o-linear-gradient(#2db89a,#00793d);
+  background: linear-gradient(#2db89a,#00793d);
+}
+
+.openswitch-image {
+  background-image: url(https://thecodeteam.com/wp-content/uploads/2017/08/open-switch-300x207.png);
+}
+
+.grid-image-top.scaleio {
+  background: -webkit-gradient(linear,left top, left bottom,from(#2e96dd),to(#326de6));
+  background: -webkit-linear-gradient(#2e96dd,#326de6);
+  background: -o-linear-gradient(#2e96dd,#326de6);
+  background: linear-gradient(#2e96dd,#326de6);
+}
+
+.scaleio-image {
+  background-image: url(https://thecodeteam.com/wp-content/uploads/2017/08/K8s_ScaleIO_Color-white-thumb-221x300.png);
+}
+
+.grid-image-top.csi {
+  background: -webkit-gradient(linear,left top, left bottom,from(#464646),to(#000000));
+  background: -webkit-linear-gradient(#464646,#000000);
+  background: -o-linear-gradient(#464646,#000000);
+  background: linear-gradient(#464646,#000000);
+}
+
+.csi-image {
+  background-image: url(https://thecodeteam.com/wp-content/uploads/2017/08/csi-1-300x99.png);
+}
+
+.grid-image-top.kubernetes {
+  background: -webkit-gradient(linear,left top, left bottom,from(#09C1D1),to(#326DE6));
+  background: -webkit-linear-gradient(#09C1D1,#326DE6);
+  background: -o-linear-gradient(#09C1D1,#326DE6);
+  background: linear-gradient(#09C1D1,#326DE6);
+}
+
+.kubernetes-image {
+  background-image: url(https://thecodeteam.com/wp-content/uploads/2017/08/kubernetes-300x293.png);
+}
+
+.grid-image-top.grpc {
+  background: -webkit-gradient(linear,left top, left bottom,from(#0CC1C8),to(#2E838C));
+  background: -webkit-linear-gradient(#0CC1C8,#2E838C);
+  background: -o-linear-gradient(#0CC1C8,#2E838C);
+  background: linear-gradient(#0CC1C8,#2E838C);
+}
+
+.grpc-image {
+  background-image: url(https://thecodeteam.com/wp-content/uploads/2017/08/grpc-300x105.png);
+}
+
+.grid-image-top.envoy {
+  background: -webkit-gradient(linear,left top, left bottom,from(#290B54),to(#130229));
+  background: -webkit-linear-gradient(#290B54,#130229);
+  background: -o-linear-gradient(#290B54,#130229);
+  background: linear-gradient(#290B54,#130229);
+}
+
+.envoy-image {
+  background-image: url(https://thecodeteam.com/wp-content/uploads/2017/08/envoy_logo-5028052-300x91.png);
+}
+
+.grid-image-top.istio {
+  background: -webkit-gradient(linear,left top, left bottom,from(#4A73C0),to(#466BB0));
+  background: -webkit-linear-gradient(#4A73C0,#466BB0);
+  background: -o-linear-gradient(#4A73C0,#466BB0);
+  background: linear-gradient(#4A73C0,#466BB0);
+}
+
+.istio-image {
+  background-image: url(https://thecodeteam.com/wp-content/uploads/2017/08/istio-203x300.png);
+}
+
+.grid-item-content {
+  padding: 0 20px 20px 20px;
+}
+
+.item-title {
+  font-size: 24px;
+  line-height: 26px;
+  font-weight: 700;
+  margin-bottom: 18px;
   display: block;
-  text-align: justify;
-  font-family: "BenchNine";
-  line-height: 0.8;
+}
+
+.item-category {
   text-transform: uppercase;
-  letter-spacing: 0px;
-}
-.word1,
-.word2 {
-  color: #9BC5DE;
-}
-.word3,
-.word4 {
-  color: #90B3C9;
-}
-.word5,
-.word6 {
-  color: #809BB0;
-}
-.word7 {
-  color: #6B7B8A;
-}
-.word8,
-.word9 {
-  color: #8B8091;
-}
-.word10,
-.word11 {
-  color: #B68FA2;
-}
-.word12,
-.word13 {
-  color: #D99AB5;
-}
-.word1 {
-  font-size: 6.3em;
-}
-.word2 {
-  font-size: 8.1em;
-}
-.word3 {
-  font-size: 4.8em;
-}
-.word4 {
-  font-size: 6.4em;
-}
-.word5 {
-  font-size: 3.8em;
-}
-.word6 {
-  font-size: 6em;
-}
-.word7 {
-  font-size: 4.5em;
-}
-.word8 {
-  font-size: 4.8em;
-}
-.word9,
-.word11 {
-  font-size: 7.9em;
-}
-.word10 {
-  font-size: 4.9em;
-}
-.word12 {
-  font-size: 8.2em;
-}
-.word13 {
-  font-size: 7.8em;
-}
-.bubble1 {
-  height: 75px;
-  width: 75px;
-  padding: 20px;
-  position: absolute;
-  color: white;
-  background-color: #99C5DE;
-  font-family: "Open Sans Condensed";
-  border-top-left-radius: 0;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 20px;
-  top: 0;
-  left: -100px;
-  padding: 10px;
-  font-size: 1.5em;
-  line-height: 1;
-}
-.bubble1 span.the-arrow1 {
-  display: inline-block;
-  width: 0;
-  height: 0;
-  border-left: 12px solid transparent;
-  border-right: 0px solid #99C5DE;
-  border-bottom: 12px solid #99C5DE;
-  position: absolute;
-  top: 63px;
-  left: 75px;
-  transform: rotateY(180deg);
-}
-.bubble2 {
-  height: 150px;
-  width: 170px;
-  padding: 20px;
-  position: absolute;
-  color: white;
-  background-color: #99C5DE;
-  font-family: "Open Sans Condensed";
-  border-top-left-radius: 30px;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 30px;
-  border-bottom-left-radius: 0;
-  left: 100%;
-  top: 20px;
-}
-.bubble2 span.the-arrow2 {
-  display: inline-block;
-  width: 0;
-  height: 0;
-  border-left: 20px solid transparent;
-  border-right: 0px solid #99C5DE;
-  border-bottom: 20px solid #99C5DE;
-  position: absolute;
-  top: 130px;
-  left: -19px;
-}
-.bubble2 img {
-  border-top-left-radius: 20px;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 20px;
-  border-bottom-left-radius: 0;
-  background: white;
   display: block;
-  width: 100%;
-  height: 100%;
+  margin-bottom: 20px;
+  font-size: 14px;
 }
-.bubble3 {
-  height: 200px;
-  width: 250px;
-  padding: 20px;
-  position: absolute;
-  color: white;
-  background-color: #90B2CB;
-  font-family: "Open Sans Condensed";
-  border-top-left-radius: 30px;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 30px;
-  border-bottom-left-radius: 0;
-  top: 183px;
-  left: -280px;
+
+.item-excerpt {
+  margin-bottom: 20px;
+  display: block;
+  font-size: 14px;
 }
-.bubble3 span.the-arrow3 {
-  display: inline-block;
-  width: 0;
-  height: 0;
-  border-left: 20px solid transparent;
-  border-right: 0px solid #90B2CB;
-  border-bottom: 20px solid #90B2CB;
+
+.more-info {
   position: absolute;
-  top: 0;
-  left: 250px;
-  transform: rotate(180deg);
+  bottom: 0;
+  margin-bottom: 25px;
+  padding-left: 0;
+  transition-duration: .5s;
+  font-size: 12px;
+  display: flex;
 }
-.bubble4 {
-  height: 180px;
-  width: 250px;
-  padding: 20px;
-  position: absolute;
-  color: white;
-  background-color: #809BAE;
-  font-family: "Open Sans Condensed";
-  border-top-left-radius: 30px;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 30px;
-  border-bottom-left-radius: 0;
-  top: 260px;
-  left: 280px;
+
+.more-info i {
+  padding-left: 5px;
+  transition-duration: .5s;
 }
-.bubble4 span.the-arrow4 {
-  display: inline-block;
-  width: 0;
-  height: 0;
-  border-left: 20px solid transparent;
-  border-right: 0px solid #809BAE;
-  border-bottom: 20px solid #809BAE;
-  position: absolute;
-  top: 160px;
-  left: -19px;
+
+.grid-item:hover .more-info i {
+  padding-left: 20px;
+  transition-duration: .5s;
 }
-.bubble5 {
-  height: 200px;
-  width: 250px;
-  padding: 20px;
-  position: absolute;
-  color: white;
-  background-color: #697A8A;
-  font-family: "Open Sans Condensed";
-  border-top-left-radius: 30px;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 30px;
-  border-bottom-left-radius: 0;
-  top: 450px;
-  left: -280px;
+
+.more-info i::before {
+  font-size: 16px;
 }
-.bubble5 span.the-arrow5 {
-  display: inline-block;
-  width: 0;
-  height: 0;
-  border-left: 20px solid transparent;
-  border-right: 0px solid #697A8A;
-  border-bottom: 20px solid #697A8A;
-  position: absolute;
-  top: 0;
-  left: 250px;
-  transform: rotate(180deg);
+
+.grid-item:hover .grid-item-wrapper {
+  padding: 2% 2%;
+  margin: -2% -2%;
 }
-.bubble6 {
-  height: 180px;
-  width: 250px;
-  padding: 20px;
-  position: absolute;
-  color: white;
-  background-color: #8B8091;
-  font-family: "Open Sans Condensed";
-  border-top-left-radius: 0;
-  border-top-right-radius: 30px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 30px;
-  top: 509px;
-  left: 280px;
-  line-height: 1.8;
+
+@media(max-width: 1333px) {
+  .grid-item {
+    flex-basis: 33.33%;
+  }
 }
-.bubble6 span.the-arrow6 {
-  display: inline-block;
-  width: 0;
-  height: 0;
-  border-left: 20px solid transparent;
-  border-right: 0px solid #8B8091;
-  border-bottom: 20px solid #8B8091;
-  position: absolute;
-  top: 0px;
-  left: -19px;
-  transform: rotateX(180deg);
+
+@media(max-width: 1073px) {
+   .grid-item {
+    flex-basis: 33.33%;
+  }
 }
-.bubble7 {
-  height: 200px;
-  width: 250px;
-  padding: 20px;
-  position: absolute;
-  color: white;
-  background-color: #B68EA6;
-  font-family: "Open Sans Condensed";
-  border-top-left-radius: 30px;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 30px;
-  border-bottom-left-radius: 0;
-  top: 675px;
-  left: -280px;
+
+@media(max-width: 815px) {
+  .grid-item {
+    flex-basis: 50%;
+  }
 }
-.bubble7 span.the-arrow7 {
-  display: inline-block;
-  width: 0;
-  height: 0;
-  border-left: 20px solid transparent;
-  border-right: 0px solid #B68EA6;
-  border-bottom: 20px solid #B68EA6;
-  position: absolute;
-  top: 0;
-  left: 250px;
-  transform: rotate(180deg);
-}
-.bubble8 {
-  height: 180px;
-  width: 250px;
-  padding: 20px;
-  position: absolute;
-  color: white;
-  background-color: #D99AB5;
-  font-family: "Open Sans Condensed";
-  border-top-left-radius: 30px;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 30px;
-  border-bottom-left-radius: 0;
-  top: 853px;
-  left: 280px;
-}
-.bubble8 span.the-arrow8 {
-  display: inline-block;
-  width: 0;
-  height: 0;
-  border-left: 20px solid transparent;
-  border-right: 0px solid #D99AB5;
-  border-bottom: 20px solid #D99AB5;
-  position: absolute;
-  top: 160px;
-  left: -19px;
+
+@media(max-width: 555px) {
+  .grid-item {
+    flex-basis: 100%;
+  }
 }
 </style>
 
@@ -357,8 +303,7 @@ body {
   window.console = window.console || function(t) {};
 </script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
-
+  
   
   <script>
   if (document.location.search.match(/type=embed/gi)) {
@@ -367,112 +312,180 @@ body {
 </script>
 
 
-<style>._3emE9--dark-theme .-S-tR--ff-downloader{background:rgba(30,30,30,.93);border:1px solid rgba(82,82,82,.54);box-shadow:0 4px 7px rgba(30,30,30,.55);color:#fff}._3emE9--dark-theme .-S-tR--ff-downloader ._6_Mtt--header ._2VdJW--minimize-btn{background:#3d4b52}._3emE9--dark-theme .-S-tR--ff-downloader ._6_Mtt--header ._2VdJW--minimize-btn:hover{background:#131415}._3emE9--dark-theme .-S-tR--ff-downloader ._10vpG--footer{background:rgba(30,30,30,.93)}._2mDEx--white-theme .-S-tR--ff-downloader{background:#fff;border:1px solid rgba(82,82,82,.54);box-shadow:0 4px 7px rgba(30,30,30,.55);color:#314c75}._2mDEx--white-theme .-S-tR--ff-downloader ._6_Mtt--header{font-weight:700}._2mDEx--white-theme .-S-tR--ff-downloader ._2dFLA--container ._2bWNS--notice{border:0;color:rgba(0,0,0,.88)}._2mDEx--white-theme .-S-tR--ff-downloader ._10vpG--footer{background:#fff}.-S-tR--ff-downloader{display:block;overflow:hidden;position:fixed;bottom:20px;right:7.1%;width:330px;height:180px;background:rgba(30,30,30,.93);border-radius:2px;color:#fff;z-index:99999999;border:1px solid rgba(82,82,82,.54);box-shadow:0 4px 7px rgba(30,30,30,.55);transition:.5s}.-S-tR--ff-downloader._3M7UQ--minimize{height:62px}.-S-tR--ff-downloader._3M7UQ--minimize .nxuu4--file-info,.-S-tR--ff-downloader._3M7UQ--minimize ._6_Mtt--header{display:none}.-S-tR--ff-downloader ._6_Mtt--header{padding:10px;font-size:17px;font-family:sans-serif}.-S-tR--ff-downloader ._6_Mtt--header ._2VdJW--minimize-btn{float:right;background:#f1ecec;height:20px;width:20px;text-align:center;padding:2px;margin-top:-10px;cursor:pointer}.-S-tR--ff-downloader ._6_Mtt--header ._2VdJW--minimize-btn:hover{background:#e2dede}.-S-tR--ff-downloader ._13XQ2--error{color:red;padding:10px;font-size:12px;line-height:19px}.-S-tR--ff-downloader ._2dFLA--container{position:relative;height:100%}.-S-tR--ff-downloader ._2dFLA--container .nxuu4--file-info{padding:6px 15px 0;font-family:sans-serif}.-S-tR--ff-downloader ._2dFLA--container .nxuu4--file-info div{margin-bottom:5px;width:100%;overflow:hidden}.-S-tR--ff-downloader ._2dFLA--container ._2bWNS--notice{margin-top:21px;font-size:11px}.-S-tR--ff-downloader ._10vpG--footer{width:100%;bottom:0;position:absolute;font-weight:700}.-S-tR--ff-downloader ._10vpG--footer ._2V73d--loader{animation:n0BD1--rotation 3.5s linear forwards;position:absolute;top:-120px;left:calc(50% - 35px);border-radius:50%;border:5px solid #fff;border-top-color:#a29bfe;height:70px;width:70px;display:flex;justify-content:center;align-items:center}.-S-tR--ff-downloader ._10vpG--footer ._24wjw--loading-bar{width:100%;height:18px;background:#dfe6e9;border-radius:5px}.-S-tR--ff-downloader ._10vpG--footer ._24wjw--loading-bar ._1FVu9--progress-bar{height:100%;background:#8bc34a;border-radius:5px}.-S-tR--ff-downloader ._10vpG--footer ._2KztS--status{margin-top:10px}.-S-tR--ff-downloader ._10vpG--footer ._2KztS--status ._1XilH--state{float:left;font-size:.9em;letter-spacing:1pt;text-transform:uppercase;width:100px;height:20px;position:relative}.-S-tR--ff-downloader ._10vpG--footer ._2KztS--status ._1jiaj--percentage{float:right}</style><style>._3emE9--dark-theme .-S-tR--ff-downloader{background:rgba(30,30,30,.93);border:1px solid rgba(82,82,82,.54);box-shadow:0 4px 7px rgba(30,30,30,.55);color:#fff}._3emE9--dark-theme .-S-tR--ff-downloader ._6_Mtt--header ._2VdJW--minimize-btn{background:#3d4b52}._3emE9--dark-theme .-S-tR--ff-downloader ._6_Mtt--header ._2VdJW--minimize-btn:hover{background:#131415}._3emE9--dark-theme .-S-tR--ff-downloader ._10vpG--footer{background:rgba(30,30,30,.93)}._2mDEx--white-theme .-S-tR--ff-downloader{background:#fff;border:1px solid rgba(82,82,82,.54);box-shadow:0 4px 7px rgba(30,30,30,.55);color:#314c75}._2mDEx--white-theme .-S-tR--ff-downloader ._6_Mtt--header{font-weight:700}._2mDEx--white-theme .-S-tR--ff-downloader ._2dFLA--container ._2bWNS--notice{border:0;color:rgba(0,0,0,.88)}._2mDEx--white-theme .-S-tR--ff-downloader ._10vpG--footer{background:#fff}.-S-tR--ff-downloader{display:block;overflow:hidden;position:fixed;bottom:20px;right:7.1%;width:330px;height:180px;background:rgba(30,30,30,.93);border-radius:2px;color:#fff;z-index:99999999;border:1px solid rgba(82,82,82,.54);box-shadow:0 4px 7px rgba(30,30,30,.55);transition:.5s}.-S-tR--ff-downloader._3M7UQ--minimize{height:62px}.-S-tR--ff-downloader._3M7UQ--minimize .nxuu4--file-info,.-S-tR--ff-downloader._3M7UQ--minimize ._6_Mtt--header{display:none}.-S-tR--ff-downloader ._6_Mtt--header{padding:10px;font-size:17px;font-family:sans-serif}.-S-tR--ff-downloader ._6_Mtt--header ._2VdJW--minimize-btn{float:right;background:#f1ecec;height:20px;width:20px;text-align:center;padding:2px;margin-top:-10px;cursor:pointer}.-S-tR--ff-downloader ._6_Mtt--header ._2VdJW--minimize-btn:hover{background:#e2dede}.-S-tR--ff-downloader ._13XQ2--error{color:red;padding:10px;font-size:12px;line-height:19px}.-S-tR--ff-downloader ._2dFLA--container{position:relative;height:100%}.-S-tR--ff-downloader ._2dFLA--container .nxuu4--file-info{padding:6px 15px 0;font-family:sans-serif}.-S-tR--ff-downloader ._2dFLA--container .nxuu4--file-info div{margin-bottom:5px;width:100%;overflow:hidden}.-S-tR--ff-downloader ._2dFLA--container ._2bWNS--notice{margin-top:21px;font-size:11px}.-S-tR--ff-downloader ._10vpG--footer{width:100%;bottom:0;position:absolute;font-weight:700}.-S-tR--ff-downloader ._10vpG--footer ._2V73d--loader{-webkit-animation:n0BD1--rotation 3.5s linear forwards;animation:n0BD1--rotation 3.5s linear forwards;position:absolute;top:-120px;left:calc(50% - 35px);border-radius:50%;border:5px solid #fff;border-top-color:#a29bfe;height:70px;width:70px;display:flex;justify-content:center;align-items:center}.-S-tR--ff-downloader ._10vpG--footer ._24wjw--loading-bar{width:100%;height:18px;background:#dfe6e9;border-radius:5px}.-S-tR--ff-downloader ._10vpG--footer ._24wjw--loading-bar ._1FVu9--progress-bar{height:100%;background:#8bc34a;border-radius:5px}.-S-tR--ff-downloader ._10vpG--footer ._2KztS--status{margin-top:10px}.-S-tR--ff-downloader ._10vpG--footer ._2KztS--status ._1XilH--state{float:left;font-size:.9em;letter-spacing:1pt;text-transform:uppercase;width:100px;height:20px;position:relative}.-S-tR--ff-downloader ._10vpG--footer ._2KztS--status ._1jiaj--percentage{float:right}</style></head>
+</head>
 
-<body translate="no">
+<body translate="no" >
   <div class="container">
-  <div class="word_split wrapper">
-  <span class="word word1"> Vyacheslav </span>
-  <span class="word word2">Munister</span>
-  <span class="word word3">Personal</span>
-  <span class="word word4">Details</span>
-  <span class="word word5">Employment</span>
-  <span class="word word6">History </span>
-  <span class="word word7">Education</span>
-  <span class="word word8">Personal</span>
-  <span class="word word9">Skills </span>
-  <span class="word word10">Technical</span>
-  <span class="word word11">Skills </span>
-  <span class="word word12">Get In </span>
-  <span class="word word13">Touch</span>
-    
-    <div class="bubble1">
-     <span class="the-arrow1"></span>
-      HI! <br> I AM..
-   </div>
+          <div class="grid-row">
+            <div class="grid-item">
+              <a class="wrapping-link" href="https://thecodeteam.com/projects/rex-ray/"></a>
+              <div class="grid-item-wrapper">
+                <div class="grid-item-container">
+                  <div class="grid-image-top rex-ray">
+                    <span class="centered project-image-bg rex-ray-image"></span>
+                  </div>
+                  <div class="grid-item-content">
+                    <span class="item-title">REX-Ray</span>
+                    <span class="item-category">Infrastructure as Code</span>
+                    <span class="item-excerpt">REX-Ray is a container storage orchestration engine enabling persistence fo...</span>
+                    <span class="more-info">View Project <i class="fas fa-long-arrow-alt-right"></i></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="grid-item">
+              <a class="wrapping-link" href="https://www.dell.com/learn/us/en/555/campaigns/xps-linux-laptop_us" target="_blank"></a>	   
+              <div class="grid-item-wrapper">
+                <div class="grid-item-container">
+                  <div class="grid-image-top sputnik">
+                    <span class="centered project-image-bg sputnik-image"></span>
+                  </div>
+                  <div class="grid-item-content">
+                    <span class="item-title">Sputnik</span>
+                    <span class="item-category">Developer System</span>
+                    <span class="item-excerpt">A developer focused laptop with a pre-installed and fully support Ubuntu im...</span>
+                    <span class="more-info">View Project <i class="fas fa-long-arrow-alt-right"></i></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="grid-item">
+              <a class="wrapping-link" href="https://www.edgexfoundry.org/" target="_blank"></a>
+              <div class="grid-item-wrapper">
+                <div class="grid-item-container">
+                  <div class="grid-image-top edgex">
+                    <span class="centered project-image-bg edgex-image"></span>
+                  </div>
+                  <div class="grid-item-content">
+                    <span class="item-title">EdgeX Foundry</span>
+                    <span class="item-category">Internet of Things</span>
+                    <span class="item-excerpt">A vendor-neutral open source project building a common open framework for I...</span>
+                    <span class="more-info">View Project <i class="fas fa-long-arrow-alt-right"></i></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="grid-item">
+              <a class="wrapping-link" href="https://www.openswitch.net/" target="_blank"></a>
+              <div class="grid-item-wrapper">
+                <div class="grid-item-container">
+                  <div class="grid-image-top openswitch">
+                    <span class="centered project-image-bg openswitch-image"></span>
+                  </div>
+                  <div class="grid-item-content">
+                    <span class="item-title">OpenSwitch</span>
+                    <span class="item-category">Software Based Infrastructure</span>
+                    <span class="item-excerpt">The OpenSwitch platform is an open source, Linux-based network operating sy...</span>
+                    <span class="more-info">View Project <i class="fas fa-long-arrow-alt-right"></i></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="grid-item">
+              <a class="wrapping-link" href="https://github.com/kubernetes/kubernetes/tree/master/examples/volumes/scaleio" target="_blank"></a>
+              <div class="grid-item-wrapper">
+                <div class="grid-item-container">
+                  <div class="grid-image-top scaleio">
+                    <span class="centered project-image-bg scaleio-image"></span>
+                  </div>
+                  <div class="grid-item-content">
+                    <span class="item-title">K8s + ScaleIO</span>
+                    <span class="item-category">Infrastructure as Code</span>
+                    <span class="item-excerpt">Configure Kubernetes resources to consume storage from volumes hosted on Sc...</span>
+                    <span class="more-info">View Project <i class="fas fa-long-arrow-alt-right"></i></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="grid-item">
+              <a class="wrapping-link" href="https://thecodeteam.com/projects/container-storage-interface/"></a>
+              <div class="grid-item-wrapper">
+                <div class="grid-item-container">
+                  <div class="grid-image-top csi">
+                    <span class="centered project-image-bg csi-image"></span>
+                  </div>
+                  <div class="grid-item-content">
+                    <span class="item-title">Container Storage Interface</span>
+                    <span class="item-category">Software Based Infrastructure</span>
+                    <span class="item-excerpt">A universal storage interface  allowing easy interoperability between conta...</span>
+                    <span class="more-info">View Project <i class="fas fa-long-arrow-alt-right"></i></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="grid-item">
+              <a class="wrapping-link" href="https://thecodeteam.com/projects/kubernetes/"></a>
+              <div class="grid-item-wrapper">
+                <div class="grid-item-container">
+                  <div class="grid-image-top kubernetes">
+                    <span class="centered project-image-bg kubernetes-image"></span>
+                  </div>
+                  <div class="grid-item-content">
+                    <span class="item-title">Kubernetes</span>
+                    <span class="item-category">Software Based Infrastructure</span>
+                    <span class="item-excerpt">An open-source system for automating deployment, scaling, and management of...</span>
+                    <span class="more-info">View Project <i class="fas fa-long-arrow-alt-right"></i></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="grid-item">
+              <a class="wrapping-link" href="https://grpc.io/" target="_blank"></a>
+              <div class="grid-item-wrapper">
+                <div class="grid-item-container">
+                  <div class="grid-image-top grpc">
+                    <span class="centered project-image-bg grpc-image"></span>
+                  </div>
+                  <div class="grid-item-content">
+                    <span class="item-title">GRPC</span>
+                    <span class="item-category">Tools and Libraries</span>
+                    <span class="item-excerpt">A high performance, open source, general-purpose RPC framework.</span>
+                    <span class="more-info">View Project <i class="fas fa-long-arrow-alt-right"></i></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="grid-item">
+              <a class="wrapping-link" href="https://thecodeteam.com/projects/envoy/"></a>
+              <div class="grid-item-wrapper">
+                <div class="grid-item-container">
+                  <div class="grid-image-top envoy">
+                    <span class="centered project-image-bg envoy-image"></span>
+                  </div>
+                  <div class="grid-item-content">
+                    <span class="item-title">Envoy</span>
+                    <span class="item-category">Software Based Infrastructure</span>
+                    <span class="item-excerpt">An open source edge and service proxy, from the developers at Lyft.</span>
+                    <span class="more-info">View Project <i class="fas fa-long-arrow-alt-right"></i></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="grid-item">
+              <a class="wrapping-link" href="https://thecodeteam.com/projects/istio/"></a>
+              <div class="grid-item-wrapper">
+                <div class="grid-item-container">
+                  <div class="grid-image-top istio">
+                    <span class="centered project-image-bg istio-image"></span>
+                  </div>
+                  <div class="grid-item-content">
+                    <span class="item-title">Istio</span>
+                    <span class="item-category">Software Based Infrastructure</span>
+                    <span class="item-excerpt">Connect, secure, control, and observe services.</span>
+                    <span class="more-info">View Project <i class="fas fa-long-arrow-alt-right"></i></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
   
-  <div class="bubble3">
-     <span class="the-arrow3"></span>
-    NATIONALITY...<br>
-    LOCATION...<br>
-    BIRTHDAY...<br>
-    HOBBIES<br>
-    ETC...<br>
-    ETC...<br>
-   </div>
-  <div class="bubble4">
-     <span class="the-arrow4"></span>
-    GRAPHIC DESIGNER 2005 - 2007<br>
-    Lorem Ipsum dolor sit amet. Lorem Ipsum dolor.<br><br>
-    CREATIVE DIRECTOR 2008 - Current
-    <br>
-    Lorem Ipsum dolor sit amet.
-    
-   </div>
-  <div class="bubble5">
-     <span class="the-arrow5"></span>
-    HIGH SCHOOL<br>
-    Lorem Ipsum dolor sit amet<br>
-    May 2004, GPA 1.5<br><br>
-    UNIVERSITY <br>
-    Lorem Ipsum dolor sit amet<br>
-    July 2007, GPA 1.5
-    
-   </div>
-  <div class="bubble6">
-     <span class="the-arrow6"></span>
-    SOCIAL COMMITMENT<br>
-    ORGANIZATION<br>
-    CREATIVITY<br>
-    COMMUNICATION<br>
-    TEAMWORK<br>
-   </div>
-  <div class="bubble7">
-     <span class="the-arrow7"></span>
-    PHOTOSHOP<br>
-    ILLUSTRATOR<br>
-    INDESIGN<br>
-    FLASH<br>
-    DREAMWEAVER<br>
-    XHTML/CSS<br>
-    JAVASCRIPT<br>
-   </div>
-  <div class="bubble8">
-     <span class="the-arrow8"></span>
-    PHONE...<br>
-    EMAIL...<br>
-    WEBSITE... <br>
-    TWITTER...<br>
-    FACEBOOK...<br>
-    DRIBBBLE...<br>
-   </div>   
-</div>
-   
-</div><!--end container-->
-    <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   
-      <script id="rendered-js">
-/*
-VIEW IN FULL MODE :: IT LOOKS MUCH BETTER WHEN VIEWED IN FULL MODE
-
-
-my intention was to use lettering.js to create the word* classes, but for some reason it didn't generate them even after including the script and calling it, it works locally but not on codepen*/
-
-/*
-                                                                                                                                                                                                    
-                                                                                                                                                                                                    Librarian Image is from Dribbble: http://dribbble.com/shots/271458-Librarian 
-                                                                                                                                                                                                    by talented "Artua"
-                                                                                                                                                                                                    
-                                                                                                                                                                                                    */
-//# sourceURL=pen.js
-    </script>
-
+  
+  
   
 
+</body>
 
-
-
+</html>
  
-</body></html>
