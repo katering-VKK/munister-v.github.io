@@ -1,197 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" >
 
-<!DOCTYPE html><html><head><base href="/"><title>Learn how to use Tinkercad | Tinkercad</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touce-icon" href="/img/favicon.ico"><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html,charset=utf-8"><meta http-equiv="X-UA-Compatible" content="chrome=1"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="twitter:dnt" content="on"><meta name="google-site-verification" content="ggwscoHgFB3_aRLEQkfobIno_rxQ62bp-i4Oa-ZFDMQ"><meta property="og:title" content="Learn how to use Tinkercad | Tinkercad"><meta name="description" content="Learn how to design and print in 3D, code, and create circuits using our free, easy-to-use app Tinkercad."><meta property="og:description" content="Learn how to design and print in 3D, code, and create circuits using our free, easy-to-use app Tinkercad."><meta property="og:image" content="https://www.tinkercad.com/img/tinkercad-logo.png"><meta property="og:site_name" content="Tinkercad"><script src="https://beta-editor.tinkercad.com/jquery-2.1.1.min.js"></script><link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"><script async type="text/javascript" src="https://api-reader.tinkercad.com/tealium/utag/utag.js"></script><script>window.googleGA = window.googleGA || function() {
-    var params = arguments;
-    setTimeout(function() {
-        window.googleGA.apply(null, params);
-    }, 1000);
-};
-window._gaq = {
-    push: function(data) {
-        if(data instanceof Array) {
-            data.unshift("event");
-            data.unshift("send");
-            googleGA.apply(googleGA, data);
-        }
-    }
-}
-</script><script src="/js/moment-with-locales.min.js"></script><script>var localeCode = 'ru';
-switch(localeCode.toLowerCase()) {
-    case 'zh-hans':
-        localeCode = 'zh-cn';
-        break;
-    case 'zh-hant':
-        localeCode = 'zh-tw';
-        break;
-}
-moment.locale(localeCode);
-</script><script type="text/javascript" src="https://beta-editor.tinkercad.com/assets_38ei05v/js/tinkercad-frontend/twitter.js"></script><script type="text/javascript" src="/js/webgl_utils.js"></script><script type="text/javascript" src="/js/webgl_check.js"></script><script type="text/javascript" src="https://beta-editor.tinkercad.com/assets_38ei05v/js/featureFlagsBundle.js"></script><style type="text/css">.notifications-wrapper {
-    display: none;
-}
+<head>
 
-body.loaded .notifications-wrapper {
+  <meta charset="UTF-8">
+  
+<link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+<meta name="apple-mobile-web-app-title" content="CodePen">
+
+<link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+
+<link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+
+
+  <title>CodePen - shape-outside with clip-path</title>
+  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  
+  
+<style>
+@supports not (shape-outside: circle()) {
+  body:before {
+    background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), color-stop(35%, #64c8c8), color-stop(65%, #64c8c8), to(rgba(255, 255, 255, 0)));
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #64c8c8 35%, #64c8c8 65%, rgba(255, 255, 255, 0) 100%);
+    content: 'shape-outside is not supported in this browser';
     display: block;
-}
-
-#page-learn lesson,
-#page-learn project-gallery {
-    padding-top: 81px;
-}
-
-#page-learn.with-announce lesson,
-#page-learn.with-announce project-gallery {
-    padding-top: 81px;
-}
-
-.colorful-footer .footer-blocks .dropdown-menu {
-    transform: translateY(calc(-100% - 0px));
-}</style><script type="text/javascript" src="https://beta-editor.tinkercad.com/assets_38ei05v/js/vendorBundle.js"></script><script type="text/javascript" src="https://beta-editor.tinkercad.com/assets_38ei05v/js/3dviewerDependenciesBundle.js"></script><script type="text/javascript" src="https://beta-editor.tinkercad.com/assets_38ei05v/js/3dviewerBundle.js"></script><link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" type="text/css"><link rel="stylesheet" href="https://beta-editor.tinkercad.com/assets_38ei05v/style/viewerBundle.css"><link rel="stylesheet" href="https://beta-editor.tinkercad.com/assets_38ei05v/js/tinkercad-frontend/styles.css"></head><body><div id="main"><div style="min-height:380px"><script type="text/javascript" src="https://beta-editor.tinkercad.com/assets_38ei05v/js/tinkercad-frontend/runtime.js"></script><script type="text/javascript" src="https://beta-editor.tinkercad.com/assets_38ei05v/js/tinkercad-frontend/polyfills.js"></script><script type="text/javascript" src="https://beta-editor.tinkercad.com/assets_38ei05v/js/tinkercad-frontend/vendor.js"></script><script type="text/javascript" src="https://beta-editor.tinkercad.com/assets_38ei05v/js/tinkercad-frontend/main.js"></script><script type="text/javascript" src="https://beta-editor.tinkercad.com/assets_38ei05v/js/nativeBridgeBundle.js"></script><style class="preloader">/* Cube Grid styles */
-.sk-cube-grid {
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    top: 0;
+    font-size: .825rem;
     left: 0;
+    letter-spacing: 0.02rem;
+    padding: .25rem 0;
+    position: absolute;
     right: 0;
-    bottom: 0;
-    margin: auto;
-    z-index: 2000;
+    text-align: center;
+    text-transform: uppercase;
+    top: 0;
+    width: 100%;
+  }
 }
-.sk-cube-grid .sk-cube {
-    width: 33%;
-    height: 33%;
-    background-color: #333;
-    float: left;
-    -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
-    animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+.img {
+  -webkit-clip-path: polygon(53.45% 90.65%, 52.65% 91.1%, 50.45% 91.1%, 48.15% 90.95%, 46.25% 90.8%, 45% 90.3%, 45.3% 89.4%, 46.7% 88.9%, 49.4% 88.6%, 50.3% 88.15%, 50.45% 86.25%, 50.15% 82.2%, 50% 79.4%, 49.85% 76.25%, 50.15% 72.2%, 49.2% 72.5%, 48.45% 72.8%, 47.65% 72.8%, 46.9% 73.3%, 46.4% 73.45%, 45.3% 72.65%, 43.9% 72.65%, 42.8% 72.35%, 41.7% 71.7%, 41.1% 70.65%, 39.85% 70.65%, 38.3% 70.65%, 37.05% 69.7%, 36.7% 68.45%, 37.2% 67.2%, 38.3% 66.55%, 39.7% 65.95%, 40.8% 64.7%, 42.2% 64.05%, 43.6% 63.75%, 45% 63.75%, 46.25% 64.05%, 47.65% 64.85%, 47.05% 62.65%, 46.7% 60.8%, 47.05% 58.45%, 47.65% 56.1%, 48.15% 53.45%, 47.2% 51.1%, 45.8% 48.45%, 44.2% 45.95%, 43.6% 43.6%, 43.45% 41.1%, 40.95% 38.6%, 39.05% 36.55%, 37.5% 34.2%, 36.7% 33.45%, 36.55% 35.3%, 35.95% 37.2%, 34.85% 39.05%, 34.05% 41.1%, 32.8% 42.8%, 31.9% 44.55%, 31.7% 45.45%, 32.2% 46.1%, 32.8% 46.7%, 33.15% 47.35%, 32.95% 47.95%, 32.5% 48.45%, 31.9% 48.75%, 31.1% 49.2%, 30.15% 50.15%, 29.05% 51.1%, 27.8% 52.65%, 26.9% 53.3%, 26.1% 53.45%, 25.65% 53.15%, 26.4% 51.55%, 27.2% 49.7%, 27.5% 47.2%, 28.45% 44.55%, 30% 41.4%, 31.4% 33.75%, 31.7% 32.2%, 32.05% 30.8%, 32.5% 29.55%, 33.15% 28.3%, 33.9% 27.5%, 35.15% 27.2%, 36.4% 27.35%, 37.5% 27.95%, 39.7% 29.55%, 42.65% 31.55%, 46.55% 35.15%, 49.55% 38.9%, 52.65% 38.45%, 55.45% 38.15%, 57.5% 37.8%, 55.8% 36.7%, 53.9% 35.45%, 52.65% 34.7%, 51.7% 34.4%, 50.95% 34.85%, 50.3% 35.15%, 49.85% 35.45%, 49.2% 35.65%, 48.6% 35.45%, 48.15% 34.85%, 47.95% 34.05%, 47.2% 33.15%, 45.8% 32.35%, 44.4% 31.7%, 43.6% 31.25%, 43.75% 30.45%, 44.4% 30.45%, 45.15% 30.65%, 45.95% 30.95%, 46.9% 31.1%, 48.3% 31.1%, 49.85% 31.25%, 51.55% 31.7%, 53.15% 32.5%, 54.85% 32.95%, 57.95% 33.75%, 60.8% 34.05%, 63.9% 35%, 65.95% 35.65%, 67.2% 36.1%, 67.8% 36.7%, 68.45% 37.5%, 68.6% 38.3%, 68.45% 39.05%, 67.95% 39.85%, 66.25% 40.95%, 64.4% 41.9%, 59.55% 43.9%, 54.7% 45%, 56.7% 49.55%, 58.15% 53.15%, 58.9% 55.45%, 59.2% 57.35%, 59.2% 58.9%, 58.75% 60.45%, 57.65% 61.9%, 56.4% 63.15%, 54.4% 64.05%, 53.15% 64.7%, 52.5% 66.4%, 52.95% 68.45%, 54.05% 73.45%, 54.4% 76.1%, 54.55% 79.85%, 54.2% 85.15%, 53.9% 89.55%);
+          clip-path: polygon(53.45% 90.65%, 52.65% 91.1%, 50.45% 91.1%, 48.15% 90.95%, 46.25% 90.8%, 45% 90.3%, 45.3% 89.4%, 46.7% 88.9%, 49.4% 88.6%, 50.3% 88.15%, 50.45% 86.25%, 50.15% 82.2%, 50% 79.4%, 49.85% 76.25%, 50.15% 72.2%, 49.2% 72.5%, 48.45% 72.8%, 47.65% 72.8%, 46.9% 73.3%, 46.4% 73.45%, 45.3% 72.65%, 43.9% 72.65%, 42.8% 72.35%, 41.7% 71.7%, 41.1% 70.65%, 39.85% 70.65%, 38.3% 70.65%, 37.05% 69.7%, 36.7% 68.45%, 37.2% 67.2%, 38.3% 66.55%, 39.7% 65.95%, 40.8% 64.7%, 42.2% 64.05%, 43.6% 63.75%, 45% 63.75%, 46.25% 64.05%, 47.65% 64.85%, 47.05% 62.65%, 46.7% 60.8%, 47.05% 58.45%, 47.65% 56.1%, 48.15% 53.45%, 47.2% 51.1%, 45.8% 48.45%, 44.2% 45.95%, 43.6% 43.6%, 43.45% 41.1%, 40.95% 38.6%, 39.05% 36.55%, 37.5% 34.2%, 36.7% 33.45%, 36.55% 35.3%, 35.95% 37.2%, 34.85% 39.05%, 34.05% 41.1%, 32.8% 42.8%, 31.9% 44.55%, 31.7% 45.45%, 32.2% 46.1%, 32.8% 46.7%, 33.15% 47.35%, 32.95% 47.95%, 32.5% 48.45%, 31.9% 48.75%, 31.1% 49.2%, 30.15% 50.15%, 29.05% 51.1%, 27.8% 52.65%, 26.9% 53.3%, 26.1% 53.45%, 25.65% 53.15%, 26.4% 51.55%, 27.2% 49.7%, 27.5% 47.2%, 28.45% 44.55%, 30% 41.4%, 31.4% 33.75%, 31.7% 32.2%, 32.05% 30.8%, 32.5% 29.55%, 33.15% 28.3%, 33.9% 27.5%, 35.15% 27.2%, 36.4% 27.35%, 37.5% 27.95%, 39.7% 29.55%, 42.65% 31.55%, 46.55% 35.15%, 49.55% 38.9%, 52.65% 38.45%, 55.45% 38.15%, 57.5% 37.8%, 55.8% 36.7%, 53.9% 35.45%, 52.65% 34.7%, 51.7% 34.4%, 50.95% 34.85%, 50.3% 35.15%, 49.85% 35.45%, 49.2% 35.65%, 48.6% 35.45%, 48.15% 34.85%, 47.95% 34.05%, 47.2% 33.15%, 45.8% 32.35%, 44.4% 31.7%, 43.6% 31.25%, 43.75% 30.45%, 44.4% 30.45%, 45.15% 30.65%, 45.95% 30.95%, 46.9% 31.1%, 48.3% 31.1%, 49.85% 31.25%, 51.55% 31.7%, 53.15% 32.5%, 54.85% 32.95%, 57.95% 33.75%, 60.8% 34.05%, 63.9% 35%, 65.95% 35.65%, 67.2% 36.1%, 67.8% 36.7%, 68.45% 37.5%, 68.6% 38.3%, 68.45% 39.05%, 67.95% 39.85%, 66.25% 40.95%, 64.4% 41.9%, 59.55% 43.9%, 54.7% 45%, 56.7% 49.55%, 58.15% 53.15%, 58.9% 55.45%, 59.2% 57.35%, 59.2% 58.9%, 58.75% 60.45%, 57.65% 61.9%, 56.4% 63.15%, 54.4% 64.05%, 53.15% 64.7%, 52.5% 66.4%, 52.95% 68.45%, 54.05% 73.45%, 54.4% 76.1%, 54.55% 79.85%, 54.2% 85.15%, 53.9% 89.55%);
+  background: rgba(221, 60, 113, 0.7) url("//s3-us-west-2.amazonaws.com/s.cdpn.io/150150/yoga.png") no-repeat center center;
+  background-blend-mode: multiply;
+  float: left;
+  margin: 1rem 2rem 1rem 0;
+  shape-outside: polygon(53.45% 90.65%, 52.65% 91.1%, 50.45% 91.1%, 48.15% 90.95%, 46.25% 90.8%, 45% 90.3%, 45.3% 89.4%, 46.7% 88.9%, 49.4% 88.6%, 50.3% 88.15%, 50.45% 86.25%, 50.15% 82.2%, 50% 79.4%, 49.85% 76.25%, 50.15% 72.2%, 49.2% 72.5%, 48.45% 72.8%, 47.65% 72.8%, 46.9% 73.3%, 46.4% 73.45%, 45.3% 72.65%, 43.9% 72.65%, 42.8% 72.35%, 41.7% 71.7%, 41.1% 70.65%, 39.85% 70.65%, 38.3% 70.65%, 37.05% 69.7%, 36.7% 68.45%, 37.2% 67.2%, 38.3% 66.55%, 39.7% 65.95%, 40.8% 64.7%, 42.2% 64.05%, 43.6% 63.75%, 45% 63.75%, 46.25% 64.05%, 47.65% 64.85%, 47.05% 62.65%, 46.7% 60.8%, 47.05% 58.45%, 47.65% 56.1%, 48.15% 53.45%, 47.2% 51.1%, 45.8% 48.45%, 44.2% 45.95%, 43.6% 43.6%, 43.45% 41.1%, 40.95% 38.6%, 39.05% 36.55%, 37.5% 34.2%, 36.7% 33.45%, 36.55% 35.3%, 35.95% 37.2%, 34.85% 39.05%, 34.05% 41.1%, 32.8% 42.8%, 31.9% 44.55%, 31.7% 45.45%, 32.2% 46.1%, 32.8% 46.7%, 33.15% 47.35%, 32.95% 47.95%, 32.5% 48.45%, 31.9% 48.75%, 31.1% 49.2%, 30.15% 50.15%, 29.05% 51.1%, 27.8% 52.65%, 26.9% 53.3%, 26.1% 53.45%, 25.65% 53.15%, 26.4% 51.55%, 27.2% 49.7%, 27.5% 47.2%, 28.45% 44.55%, 30% 41.4%, 31.4% 33.75%, 31.7% 32.2%, 32.05% 30.8%, 32.5% 29.55%, 33.15% 28.3%, 33.9% 27.5%, 35.15% 27.2%, 36.4% 27.35%, 37.5% 27.95%, 39.7% 29.55%, 42.65% 31.55%, 46.55% 35.15%, 49.55% 38.9%, 52.65% 38.45%, 55.45% 38.15%, 57.5% 37.8%, 55.8% 36.7%, 53.9% 35.45%, 52.65% 34.7%, 51.7% 34.4%, 50.95% 34.85%, 50.3% 35.15%, 49.85% 35.45%, 49.2% 35.65%, 48.6% 35.45%, 48.15% 34.85%, 47.95% 34.05%, 47.2% 33.15%, 45.8% 32.35%, 44.4% 31.7%, 43.6% 31.25%, 43.75% 30.45%, 44.4% 30.45%, 45.15% 30.65%, 45.95% 30.95%, 46.9% 31.1%, 48.3% 31.1%, 49.85% 31.25%, 51.55% 31.7%, 53.15% 32.5%, 54.85% 32.95%, 57.95% 33.75%, 60.8% 34.05%, 63.9% 35%, 65.95% 35.65%, 67.2% 36.1%, 67.8% 36.7%, 68.45% 37.5%, 68.6% 38.3%, 68.45% 39.05%, 67.95% 39.85%, 66.25% 40.95%, 64.4% 41.9%, 59.55% 43.9%, 54.7% 45%, 56.7% 49.55%, 58.15% 53.15%, 58.9% 55.45%, 59.2% 57.35%, 59.2% 58.9%, 58.75% 60.45%, 57.65% 61.9%, 56.4% 63.15%, 54.4% 64.05%, 53.15% 64.7%, 52.5% 66.4%, 52.95% 68.45%, 54.05% 73.45%, 54.4% 76.1%, 54.55% 79.85%, 54.2% 85.15%, 53.9% 89.55%);
+  height: 600px;
+  width: 600px;
 }
-.sk-cube-grid .sk-cube1 {
-    -webkit-animation-delay: 0.2s;
-    animation-delay: 0.2s;
-    background-color: #ff2f00;
+
+body {
+  background-color: #862d4a;
+  color: #fff;
+  font-family: "Libre Baskerville", serif;
+  line-height: 1.7;
+  position: relative;
+  width: 100%;
 }
-.sk-cube-grid .sk-cube2 {
-    -webkit-animation-delay: 0.3s;
-    animation-delay: 0.3s;
-    background-color: #ff7119;
+
+main {
+  margin: 0 auto;
+  max-width: 60rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
-.sk-cube-grid .sk-cube3 {
-    -webkit-animation-delay: 0.4s;
-    animation-delay: 0.4s;
-    background-color: #ff9600;
+
+p {
+  font-size: .9rem;
+  padding-top: 1rem;
 }
-.sk-cube-grid .sk-cube4 {
-    -webkit-animation-delay: 0.1s;
-    animation-delay: 0.1s;
-    background-color: #00b850;
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-top: 0;
+  margin-bottom: .5rem;
+  padding-top: 3rem;
 }
-.sk-cube-grid .sk-cube5 {
-    -webkit-animation-delay: 0.2s;
-    animation-delay: 0.2s;
-    background-color: #7fcd00;
+.title span {
+  color: #black;
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: 400;
 }
-.sk-cube-grid .sk-cube6 {
-    -webkit-animation-delay: 0.3s;
-    animation-delay: 0.3s;
-    background-color: #d6d300;
+
+.intro {
+  color: #f5cca3;
+  font-style: italic;
+  font-size: 1.15rem;
 }
-.sk-cube-grid .sk-cube7 {
-    -webkit-animation-delay: 0s;
-    animation-delay: 0s;
-    background-color: #0066bc;
+
+@supports (shape-outside: polygon(0 0, 0 100%, 100% 50%, 0 50%)) and ((-webkit-clip-path: polygon(0 0, 0 100%, 100% 50%, 0 50%)) or (clip-path: polygon(0 0, 0 100%, 100% 50%, 0 50%))) {
+  .title {
+    padding-top: 2rem;
+  }
 }
-.sk-cube-grid .sk-cube8 {
-    -webkit-animation-delay: 0.1s;
-    animation-delay: 0.1s;
-    background-color: #009cd1;
+@supports (shape-outside: polygon(0 0, 0 100%, 100% 50%, 0 50%)) {
+  p {
+    margin: 0 0 0 auto;
+    max-width: 38rem;
+  }
 }
-.sk-cube-grid .sk-cube9 {
-    -webkit-animation-delay: 0.2s;
-    animation-delay: 0.2s;
-    background-color: #4bbce1;
+@supports ((-webkit-clip-path: polygon(0 0, 0 100%, 100% 50%, 0 50%)) or (clip-path: polygon(0 0, 0 100%, 100% 50%, 0 50%))) {
+  .img {
+    padding: 1.23rem;
+  }
 }
-@-webkit-keyframes sk-cubeGridScaleDelay {
-    0%, 70%, 100% {
-        -webkit-transform: scale3D(1, 1, 1);
-        transform: scale3D(1, 1, 1);
-    } 35% {
-        -webkit-transform: scale3D(0, 0, 1);
-        transform: scale3D(0, 0, 1);
+@supports ((-webkit-clip-path: polygon(0 0, 0 100%, 100% 50%, 0 50%)) or (clip-path: polygon(0 0, 0 100%, 100% 50%, 0 50%))) {
+  @supports not (shape-outside: polygon(0 0, 0 100%, 100% 50%, 0 50%)) {
+    .img {
+      margin-left: -20%;
     }
+  }
 }
-@keyframes sk-cubeGridScaleDelay {
-    0%, 70%, 100% {
-        -webkit-transform: scale3D(1, 1, 1);
-        transform: scale3D(1, 1, 1);
-    } 35% {
-        -webkit-transform: scale3D(0, 0, 1);
-        transform: scale3D(0, 0, 1);
-    }
-}
-div.splash {
-    background-color: #74bde6 ;
-    bottom: 0px ;
-    display: flex ;
-    left: 0px ;
-    position: fixed ;
-    right: 0px ;
-    top: 0px ;
-    z-index: 1000;
-}
-div.splash--loaded {
-    opacity: 0.0 ;
-    transition: opacity 100ms ease ;
-}
-div.splash__message {
-    font-size: 26px ;
-    line-height: 31px ;
-    margin: auto auto auto auto ;
-    text-decoration: underline ;
-}
-</style><div class="preloader splash"><div class="splash__message"><div class="sk-cube-grid"><div class="sk-cube sk-cube1"></div><div class="sk-cube sk-cube2"></div><div class="sk-cube sk-cube3"></div><div class="sk-cube sk-cube4"></div><div class="sk-cube sk-cube5"></div><div class="sk-cube sk-cube6"></div><div class="sk-cube sk-cube7"></div><div class="sk-cube sk-cube8"></div><div class="sk-cube sk-cube9"></div></div></div></div><script>(function listenForAppReadyEvent() {
-    // Gather DOM references.
-    var splash = document.querySelector( ".splash" );
-    var preloaders = document.querySelectorAll( ".preloader" );
-    // Listen for our "appready" message event.
-    window.addEventListener( "message", handleMessage, false );
-    // ----------------------------------------------------------------------- //
-    // ----------------------------------------------------------------------- //
-    // I handle "message" events on the current window.
-    function handleMessage( event ) {
-        if ( event.data === "appready" ) {
-        console.log( "AppReady event received!" );
-        window.removeEventListener( "message", handleMessage, false );
-        removeSplashScreen();
-        }
-        // NOTE ON SECURITY: According to the documentation on postMessage(), you
-        // should always test the Origin and [optionally] the Source attributes
-        // of the "message" event in order to make sure the event is coming from
-        // the expected place. However, for something as innocuous as the
-        // "splash page", I'm omitting such a security check. Since this handler
-        // does nothing but remove DOM elements from the static portion of the
-        // page, there's no security risk here that I can see. Such a test would
-        // add unnecessary complexity. That said, testing the origin is a best
-        // practice that should be done with anything that involves passing
-        // around sensitive data.
-    }
-    // I remove the splash screen and elements from the DOM, exposing the loaded
-    // application beneath them.
-    function removeSplashScreen() {
-        splash.classList.add( "splash--loaded" );
-        // Once the splash screen has been faded-out, let's rip all of the
-        // preloader-related DOM elements out of the document.
-        setTimeout(
-        function removeDomElements() {
-            for ( var i = 0 ; i < preloaders.length ; i++ ) {
-            var item = preloaders[ i ];
-            item.parentNode.removeChild( item );
-            }
-            document.body.classList.add('loaded');
-        },
-        200
-        );
-    }
-})();</script><app locale="ru" assetFolder="https://beta-editor.tinkercad.com/assets_38ei05v/js/tinkercad-frontend" tinkercad_v2_endpoint="https://api-reader.tinkercad.com" tinkercad_v1_endpoint="https://v1.tinkercad.com" csg_endpoint="https://csg.tinkercad.com" instructables_jsonapi_endpoint="https://www.instructables.com/json-api" showHeaderAndFooter="true" announcementsEnabled="true" lesson_plan_endpoint="https://lessonplan.prd.tinkercad.com/v1/graphql"></app></div></div></body></html>
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
   
   
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
 
 
+</head>
+
+<body translate="no" >
+  <main>
+	<div class="img"></div>
+	
+	<p class="title">shape-outside with clip-path <span>and background-blend-mode</span>
+</p>
+	
+	<p class="intro">The following are a few of my favorite excerpts from the 2005 Stanford University commencement speech given by Steve Jobs.</p>
+	
+	<p class="first">“No one wants to die. Even people who want to go to heaven don't want to die to get there. And yet death is the destination we all share. No one has ever escaped it. And that is as it should be, because Death is very likely the single best invention of Life. It is Life's change agent. It clears out the old to make way for the new. Right now the new is you, but someday not too long from now, you will gradually become the old and be cleared away. Sorry to be so dramatic, but it is quite true.</p>
+
+	<p>Your time is limited, so don't waste it living someone else's life. Don't be trapped by dogma — which is living with the results of other people's thinking. Don't let the noise of others' opinions drown out your own inner voice. And most important, have the courage to follow your heart and intuition. They somehow already know what you truly want to become. Everything else is secondary.</p>
+
+	<p>Stay Hungry. Stay Foolish.”</p>	
+	
+</main>
+    <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+
+  
+  
+      <script id="rendered-js" >
+
+    </script>
+
+  
+
+</body>
+
+</html>
+ 
