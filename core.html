@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <div class='header'>
+    <div>
+      <ul>
+        <li>Mac</li>
+        <li>iPhone</li>
+        <li>iPad</li>
+        <li>Watch</li>
+        <li>TV</li>
+         <li>Music</li>
+        <li>Support</li>
+      </ul>
+    </div>
+  </div>
+  <div class='xcontainer'>
+    <div id='x'>iPhone X</div>
+    <div id='xhello'>Say hello to the future.</div>
+    <div id='xpic'>
+      <img src = 'https://s31.postimg.org/c5aghhgmz/iphonex.png' alt='iPhone X'>
+    </div>
+    </div>
+  <div class='watchcontainer'>
+    <span id='imagination'>Imagination is a gift.</span>
+    <div id='shopwatch'>Shop last minute gifts.</div>
+    <div id='watch'>
+      <img src='https://s31.postimg.org/hw0mvaonv/applewatch.png' alt='Apple Watch'>
+    </div>
+  </div>
+    <div class='macgrid'>
+      <div class='imac'>
+        <div class='headtext'>iMac Pro</div>
+        <div class='Subheadtext'>Available now.</div>
+         <img src='https://s31.postimg.org/x60i27wy3/imac.png' alt='iMac' id='imac'>
+    </div>
+      <div>
+         <div class='iphone8'>
+        <div class='headtext'>iPhone 8</div>
+        <div class='subheadtext'>A new generation of iPhone.</div>
+        <img src='https://s31.postimg.org/cxd4h0kxn/iphone8.png' id='iphone8pic'>
+      </div>
+    </div>
+      <div class='iwatch'>
+      <img src='https://s31.postimg.org/heeo6zqq3/applewatchlogo.png' class='topimg'>
+      <div>Freedom calls.</div>
+      <img src='https://s31.postimg.org/heeo72j17/applewatchimage.png'>
+    </div>
+    <div class='fourk'>
+      <img src='https://s31.postimg.org/rbpp07iy3/apple4ktv.png' class='topimg'>
+      <div>The 4k HDR era. Now playing.</div>
+      <img src='https://s31.postimg.org/sdzvipc17/apple4ktvimage.png' id='tv'>
+    </div>
+    <div class='ipadpro'>
+      <div class='headtext'>iPad Pro</div>
+      <div class='subheadtext'>Anything you can do, you can do better</div>
+      <img src='https://s31.postimg.org/hsg06gdcr/ipadpro.png'>
+    </div>
+    <div>
+      <div class='absoluted'>
+        <div class='subheadtext'>Move someone</div>
+        <div id='holiday'>this holiday.</div>
+        <div id='watchsway'>Watch "Sway"</div>
+      </div>
+      <img src='https://s31.postimg.org/xhr56y55n/applesway.png' id=sway>
+    </div>
+  </div>
+  <div class='credits'>
+    <div></div>
+    <div>
+      <p><strong>Shop and Learn</strong></p>
+    </div>
+    <div>
+      <p><strong>Apple Store</strong></p>
+    </div>
+    <div>
+      <p><strong>For Education</strong></p>
+    </div>
+    <div>
+      <p><strong>Account</strong></p>
+    </div>
+    <div>
+      <p><strong>About Apple</strong></p>
+    </div>
+    <div></div>
+  </div>
+</body>
+
+
+<style>
+
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 400;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+}
+
+body {
+  background-color:#FAFAFA;
+  font-family:'San Francisco';
+  margin:0;
+  padding:0;
+}
+
+.header {
+  display:grid;
+  grid-template-columns: 1fr;
+  background-color: #323232;
+  opacity: .96;
+  height: 2.7em;
+  width: 100%;
+  color: #FAFAFA;
+  text-align:center;
+  align-items:center;
+  position:fixed;
+  
+}
+
+ul {
+  list-style-type:none;
+  margin:0;
+  pading:0;
+}
+
+li {
+  padding-right: 3em;
+  padding-left: 3em;
+  display:inline;
+}
+
+li:hover {
+  color: #959595;
+}
+.xcontainer{
+  text-align:center;
+  color: #111111;
+  padding-top: 8em;
+}
+#x {
+  font-size:50px;
+  font-weight:900;
+}
+#xhello{
+  padding-top:.5em;
+  font-size:30px;
+  font-weight:500;
+
+}
+.watchcontainer{
+  margin-top:8em;
+  text-align:center;
+}
+#imagination{
+  font-size:55px;
+  font-weight:900;
+}
+#shopwatch{
+  font-size:27px;
+  font-weight:500;
+}
+.macgrid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-row-gap:1em;
+   grid-column-gap:1em;
+}
+.imac{
+  text-align:center;
+  background-color:#1A1A1A;
+  color: #FAFAFA;
+       
+}
+#imac{
+  margin-top:3em;
+}
+.headtext {
+  font-size: 40px;
+  font-weight: 700;
+  padding-top: 1.25em;
+}
+
+.subheadtext {
+  font-size: 20px;
+  font-weight: 200;
+}
+
+.iphone8 {
+  text-align:center;
+  background-color:#F9F0EB;
+}
+
+.headtext {
+  font-size: 40px;
+  font-weight: 700;
+  padding-top:1.25em;
+}
+
+.subheadtext {
+  font-size: 20px;
+  font-weight: 200;
+}
+
+#iphone8pic {
+  margin-top: 3em;
+  height: 469px;
+}
+
+#tv {
+  height: 469px;
+}
+
+/* ROW TWO */
+
+.iwatch {
+  text-align:center;
+  font-size: 20px;
+}
+
+.fourk {
+  background-color:#020814;
+  text-align:center;
+  color:white;
+  font-size: 20px;
+}
+
+/* ROW THREE */
+
+.ipadpro {
+  text-align:center;
+}
+
+.topimg {
+  margin-top: 3em;
+}
+
+/* FIND BETTER IMAGE, STYLING */
+#sway {
+  width: 100%;
+}
+
+/* Abosolute Positioning for Sway Text, not best b/c no picture */
+
+.absoluted {
+  position:absolute;
+  top: 2463px;
+  left: 65%;
+  color:white;
+  font-size: 50px;
+}
+
+#holiday {
+  font-size: 40px;
+  font-weight: 700;
+  text-align:center;
+}
+
+#watchsway {
+  font-size: 20px;
+  text-align:center;
+  margin-top:.5em;
+}
+
+/* End */
+
+.credits {
+  margin-top: 5em;
+  display:grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 2fr;
+  grid-auto-rows: auto;
+  text-align:right;
+}
+
+
+
+
+
+
+
+
+
+</style>
+
+
+
+<html>
