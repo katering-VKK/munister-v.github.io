@@ -614,7 +614,6 @@ nav .grid>[class*="column-"] {
 
 main {
     padding: 2rem 0;
-    word-break: break-all;
 }
 
 .grid>[class*="column-"] {
@@ -686,9 +685,7 @@ ul li a::after {
     bottom: 38%;
     content: '';
     display: inline-block;
-    background-color: rgb(255, 255, 255);
-    background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(0, 255, 235, 0.6867121848739496) 100%);
-    ;
+    background-color: #8fa7d6;
     transform: translateX(-100%);
     height: 0;
 }
@@ -709,38 +706,4 @@ ul li a.menu3::after {
 *:before,
 *:after {
     box-sizing: border-box;
-}
-
-::-webkit-scrollbar {
-    width: 15px;
-    background: inherit;
-    border-radius: 10px;
-}
-
- ::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background-color: #121823;
-    box-shadow: inset 0 0 0 1px #0359ff;
-    border: 4px double #ffffff;
-}
-
- ::-webkit-scrollbar-thumb:hover {
-    background: #2b2a33;
-}
-
- ::-webkit-scrollbar:hover {
-    background: inherit;
-    background: magenta;
-    border-radius: 10px;
-}
-
- ::-webkit-scrollbar:active {
-    background: inherit;
-    background: red;
-    border: 3px solid #ffffff;
-    border-radius: 10px;
-}
-
- ::-webkit-scrollbar-thumb:active {
-    background: #1a00e6;
 }
