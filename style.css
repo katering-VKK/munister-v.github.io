@@ -586,7 +586,7 @@ nav ul {
 }
 
 nav ul li {
-    font-size: 0.875rem;
+    font-size: 0.925rem;
     font-weight: 700;
     letter-spacing: 0.125rem;
     text-transform: uppercase;
@@ -703,15 +703,15 @@ ul li a::after {
 }
 
 ul li a.menu1::after {
-    width: 75px;
+    width: 80px;
 }
 
 ul li a.menu2::after {
-    width: 58px;
+    width: 61px;
 }
 
 ul li a.menu3::after {
-    width: 54px
+    width: 57px
 }
 
 *,
@@ -760,10 +760,25 @@ ul li a.menu3::after {
 
 @media (max-width: 990px) {
     a {
-        font-size: 100%;
+        font-size: 120%;
     }
     ul li a::after {
         bottom: 23%;
+    }
+    h1.section-heading {
+        display: none;
+    }
+    main {
+        margin-top: -100px;
+    }
+    ul li a.menu1::after {
+        width: 92px;
+    }
+    ul li a.menu2::after {
+        width: 70px;
+    }
+    ul li a.menu3::after {
+        width: 65px;
     }
 }
 
@@ -772,3 +787,29 @@ ul li a.menu3::after {
         bottom: 38%;
     }
 }
+
+@keyframes blick {
+    from {
+        transform: translateX(-100px)
+    }
+    20% {
+        transform: translateX(530px)
+    }
+    to {
+        transform: translateX(531px)
+    }
+}
+
+#logo {
+    position: relative;
+    display: inline-block
+}
+
+.blick:after {
+    content: "";
+    position: absolute;
+    width: 530px;
+    height: 20px;
+    left: -280px;
+    background: linear-gradient(90deg, rgba(229, 172, 142, 0), rgb(0 0 0) 50%, rgb(0 0 0) 80%, rgba(229, 172, 142, 0));
+    animation: blick 7s infinite;
