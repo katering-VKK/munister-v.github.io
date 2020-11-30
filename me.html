@@ -1,210 +1,144 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 
 <head>
-    <meta charset="UTF-8">
-    <link rel="shortcut icon" type="image/x-icon" href="https://munister-v.github.io/img/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Munister - About me</title>
-    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <meta charset="UTF-8">
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"NRJS-c685010af489d443818","applicationID":"405834861","transactionName":"clYMQEAKCg1dQBxEBl9KTVJHCQoRWVVWGxBZVhU=","queueTime":0,"applicationTime":275,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-c685010af489d443818",applicationID:"405834861"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(6),c=e(7),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(8);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(5),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,y=["click","keydown","mousedown","pointerdown","touchstart"];y.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],4:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],5:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],6:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],7:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],8:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?f(e,c,o):o()}function n(n,r,i,o){if(!p.aborted||o){e&&e(n,r,i);for(var a=t(i),c=v(n),f=c.length,u=0;u<f;u++)c[u].apply(a,r);var d=s[w[n]];return d&&d.push([b,n,r,a]),a}}function l(e,t){h[e]=v(e).concat(t)}function m(e,t){var n=h[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return h[e]||[]}function g(e){return d[e]=d[e]||i(n)}function y(e,t){u(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var h={},w={},b={on:l,addEventListener:l,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:y,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var c="nr@context",f=e("gos"),u=e(6),s={},d={},p=t.exports=i();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=b.info=NREUM.info,t=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===p.readyState&&o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=e(2),c=e("handle"),f=e(6),u=e("ee"),s=e(4),d=window,p=d.document,l="addEventListener",m="attachEvent",v=d.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:v,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1184.min.js"},w=v&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),b=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:w,userAgent:s};e(1),e(3),p[l]?(p[l]("DOMContentLoaded",o,!1),d[l]("load",r,!1)):(p[m]("onreadystatechange",i),d[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0},{}],"wrap-function":[function(e,t,n){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(7),a="nr@original",c=Object.prototype.hasOwnProperty,f=!1;t.exports=function(e,t){function n(e,t,n,i){function nrWrapper(){var r,a,c,f;try{a=this,r=o(arguments),c="function"==typeof n?n(r,a):n||{}}catch(u){p([u,"",[r,a,i],c])}s(t+"start",[r,a,i],c);try{return f=e.apply(a,r)}catch(d){throw s(t+"err",[r,a,d],c),d}finally{s(t+"end",[r,a,f],c)}}return r(e)?e:(t||(t=""),nrWrapper[a]=e,d(e,nrWrapper),nrWrapper)}function u(e,t,i,o){i||(i="");var a,c,f,u="-"===i.charAt(0);for(f=0;f<t.length;f++)c=t[f],a=e[c],r(a)||(e[c]=n(a,u?c+i:i,o,c))}function s(n,r,i){if(!f||t){var o=f;f=!0;try{e.emit(n,r,i,t)}catch(a){p([a,n,r,i])}f=o}}function d(e,t){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(e);return n.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(r){p([r])}for(var i in e)c.call(e,i)&&(t[i]=e[i]);return t}function p(t){try{e.emit("internal-error",t)}catch(n){}}return e||(e=i),n.inPlace=u,n.flag=a,n}},{}]},{},["loader"]);</script>
+  
+<link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+<meta name="apple-mobile-web-app-title" content="CodePen">
 
+<link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
 
-
-    <style>
-        @supports not (shape-outside: circle()) {
-            body:before {
-                background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), color-stop(35%, #64c8c8), color-stop(65%, #64c8c8), to(rgba(255, 255, 255, 0)));
-                background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #64c8c8 35%, #64c8c8 65%, rgba(255, 255, 255, 0) 100%);
-                content: 'shape-outside is not supported in this browser';
-                display: block;
-                font-size: .825rem;
-                left: 0;
-                letter-spacing: 0.02rem;
-                padding: .25rem 0;
-                position: absolute;
-                right: 0;
-                text-align: center;
-                text-transform: uppercase;
-                top: 0;
-                width: 100%;
-            }
-        }
-        
-        html {
-            cursor: url(http://www.rw-designer.com/cursor-extern.php?id=43423), auto;
-        }
-        
-        .img {
-            -webkit-clip-path: polygon(53.45% 90.65%, 52.65% 91.1%, 50.45% 91.1%, 48.15% 90.95%, 46.25% 90.8%, 45% 90.3%, 45.3% 89.4%, 46.7% 88.9%, 49.4% 88.6%, 50.3% 88.15%, 50.45% 86.25%, 50.15% 82.2%, 50% 79.4%, 49.85% 76.25%, 50.15% 72.2%, 49.2% 72.5%, 48.45% 72.8%, 47.65% 72.8%, 46.9% 73.3%, 46.4% 73.45%, 45.3% 72.65%, 43.9% 72.65%, 42.8% 72.35%, 41.7% 71.7%, 41.1% 70.65%, 39.85% 70.65%, 38.3% 70.65%, 37.05% 69.7%, 36.7% 68.45%, 37.2% 67.2%, 38.3% 66.55%, 39.7% 65.95%, 40.8% 64.7%, 42.2% 64.05%, 43.6% 63.75%, 45% 63.75%, 46.25% 64.05%, 47.65% 64.85%, 47.05% 62.65%, 46.7% 60.8%, 47.05% 58.45%, 47.65% 56.1%, 48.15% 53.45%, 47.2% 51.1%, 45.8% 48.45%, 44.2% 45.95%, 43.6% 43.6%, 43.45% 41.1%, 40.95% 38.6%, 39.05% 36.55%, 37.5% 34.2%, 36.7% 33.45%, 36.55% 35.3%, 35.95% 37.2%, 34.85% 39.05%, 34.05% 41.1%, 32.8% 42.8%, 31.9% 44.55%, 31.7% 45.45%, 32.2% 46.1%, 32.8% 46.7%, 33.15% 47.35%, 32.95% 47.95%, 32.5% 48.45%, 31.9% 48.75%, 31.1% 49.2%, 30.15% 50.15%, 29.05% 51.1%, 27.8% 52.65%, 26.9% 53.3%, 26.1% 53.45%, 25.65% 53.15%, 26.4% 51.55%, 27.2% 49.7%, 27.5% 47.2%, 28.45% 44.55%, 30% 41.4%, 31.4% 33.75%, 31.7% 32.2%, 32.05% 30.8%, 32.5% 29.55%, 33.15% 28.3%, 33.9% 27.5%, 35.15% 27.2%, 36.4% 27.35%, 37.5% 27.95%, 39.7% 29.55%, 42.65% 31.55%, 46.55% 35.15%, 49.55% 38.9%, 52.65% 38.45%, 55.45% 38.15%, 57.5% 37.8%, 55.8% 36.7%, 53.9% 35.45%, 52.65% 34.7%, 51.7% 34.4%, 50.95% 34.85%, 50.3% 35.15%, 49.85% 35.45%, 49.2% 35.65%, 48.6% 35.45%, 48.15% 34.85%, 47.95% 34.05%, 47.2% 33.15%, 45.8% 32.35%, 44.4% 31.7%, 43.6% 31.25%, 43.75% 30.45%, 44.4% 30.45%, 45.15% 30.65%, 45.95% 30.95%, 46.9% 31.1%, 48.3% 31.1%, 49.85% 31.25%, 51.55% 31.7%, 53.15% 32.5%, 54.85% 32.95%, 57.95% 33.75%, 60.8% 34.05%, 63.9% 35%, 65.95% 35.65%, 67.2% 36.1%, 67.8% 36.7%, 68.45% 37.5%, 68.6% 38.3%, 68.45% 39.05%, 67.95% 39.85%, 66.25% 40.95%, 64.4% 41.9%, 59.55% 43.9%, 54.7% 45%, 56.7% 49.55%, 58.15% 53.15%, 58.9% 55.45%, 59.2% 57.35%, 59.2% 58.9%, 58.75% 60.45%, 57.65% 61.9%, 56.4% 63.15%, 54.4% 64.05%, 53.15% 64.7%, 52.5% 66.4%, 52.95% 68.45%, 54.05% 73.45%, 54.4% 76.1%, 54.55% 79.85%, 54.2% 85.15%, 53.9% 89.55%);
-            clip-path: polygon(53.45% 90.65%, 52.65% 91.1%, 50.45% 91.1%, 48.15% 90.95%, 46.25% 90.8%, 45% 90.3%, 45.3% 89.4%, 46.7% 88.9%, 49.4% 88.6%, 50.3% 88.15%, 50.45% 86.25%, 50.15% 82.2%, 50% 79.4%, 49.85% 76.25%, 50.15% 72.2%, 49.2% 72.5%, 48.45% 72.8%, 47.65% 72.8%, 46.9% 73.3%, 46.4% 73.45%, 45.3% 72.65%, 43.9% 72.65%, 42.8% 72.35%, 41.7% 71.7%, 41.1% 70.65%, 39.85% 70.65%, 38.3% 70.65%, 37.05% 69.7%, 36.7% 68.45%, 37.2% 67.2%, 38.3% 66.55%, 39.7% 65.95%, 40.8% 64.7%, 42.2% 64.05%, 43.6% 63.75%, 45% 63.75%, 46.25% 64.05%, 47.65% 64.85%, 47.05% 62.65%, 46.7% 60.8%, 47.05% 58.45%, 47.65% 56.1%, 48.15% 53.45%, 47.2% 51.1%, 45.8% 48.45%, 44.2% 45.95%, 43.6% 43.6%, 43.45% 41.1%, 40.95% 38.6%, 39.05% 36.55%, 37.5% 34.2%, 36.7% 33.45%, 36.55% 35.3%, 35.95% 37.2%, 34.85% 39.05%, 34.05% 41.1%, 32.8% 42.8%, 31.9% 44.55%, 31.7% 45.45%, 32.2% 46.1%, 32.8% 46.7%, 33.15% 47.35%, 32.95% 47.95%, 32.5% 48.45%, 31.9% 48.75%, 31.1% 49.2%, 30.15% 50.15%, 29.05% 51.1%, 27.8% 52.65%, 26.9% 53.3%, 26.1% 53.45%, 25.65% 53.15%, 26.4% 51.55%, 27.2% 49.7%, 27.5% 47.2%, 28.45% 44.55%, 30% 41.4%, 31.4% 33.75%, 31.7% 32.2%, 32.05% 30.8%, 32.5% 29.55%, 33.15% 28.3%, 33.9% 27.5%, 35.15% 27.2%, 36.4% 27.35%, 37.5% 27.95%, 39.7% 29.55%, 42.65% 31.55%, 46.55% 35.15%, 49.55% 38.9%, 52.65% 38.45%, 55.45% 38.15%, 57.5% 37.8%, 55.8% 36.7%, 53.9% 35.45%, 52.65% 34.7%, 51.7% 34.4%, 50.95% 34.85%, 50.3% 35.15%, 49.85% 35.45%, 49.2% 35.65%, 48.6% 35.45%, 48.15% 34.85%, 47.95% 34.05%, 47.2% 33.15%, 45.8% 32.35%, 44.4% 31.7%, 43.6% 31.25%, 43.75% 30.45%, 44.4% 30.45%, 45.15% 30.65%, 45.95% 30.95%, 46.9% 31.1%, 48.3% 31.1%, 49.85% 31.25%, 51.55% 31.7%, 53.15% 32.5%, 54.85% 32.95%, 57.95% 33.75%, 60.8% 34.05%, 63.9% 35%, 65.95% 35.65%, 67.2% 36.1%, 67.8% 36.7%, 68.45% 37.5%, 68.6% 38.3%, 68.45% 39.05%, 67.95% 39.85%, 66.25% 40.95%, 64.4% 41.9%, 59.55% 43.9%, 54.7% 45%, 56.7% 49.55%, 58.15% 53.15%, 58.9% 55.45%, 59.2% 57.35%, 59.2% 58.9%, 58.75% 60.45%, 57.65% 61.9%, 56.4% 63.15%, 54.4% 64.05%, 53.15% 64.7%, 52.5% 66.4%, 52.95% 68.45%, 54.05% 73.45%, 54.4% 76.1%, 54.55% 79.85%, 54.2% 85.15%, 53.9% 89.55%);
-            background: rgba(221, 60, 113, 0.7) url("//s3-us-west-2.amazonaws.com/s.cdpn.io/150150/yoga.png") no-repeat center center;
-            background-blend-mode: multiply;
-            float: left;
-            margin: 1rem 2rem 1rem 0;
-            shape-outside: polygon(53.45% 90.65%, 52.65% 91.1%, 50.45% 91.1%, 48.15% 90.95%, 46.25% 90.8%, 45% 90.3%, 45.3% 89.4%, 46.7% 88.9%, 49.4% 88.6%, 50.3% 88.15%, 50.45% 86.25%, 50.15% 82.2%, 50% 79.4%, 49.85% 76.25%, 50.15% 72.2%, 49.2% 72.5%, 48.45% 72.8%, 47.65% 72.8%, 46.9% 73.3%, 46.4% 73.45%, 45.3% 72.65%, 43.9% 72.65%, 42.8% 72.35%, 41.7% 71.7%, 41.1% 70.65%, 39.85% 70.65%, 38.3% 70.65%, 37.05% 69.7%, 36.7% 68.45%, 37.2% 67.2%, 38.3% 66.55%, 39.7% 65.95%, 40.8% 64.7%, 42.2% 64.05%, 43.6% 63.75%, 45% 63.75%, 46.25% 64.05%, 47.65% 64.85%, 47.05% 62.65%, 46.7% 60.8%, 47.05% 58.45%, 47.65% 56.1%, 48.15% 53.45%, 47.2% 51.1%, 45.8% 48.45%, 44.2% 45.95%, 43.6% 43.6%, 43.45% 41.1%, 40.95% 38.6%, 39.05% 36.55%, 37.5% 34.2%, 36.7% 33.45%, 36.55% 35.3%, 35.95% 37.2%, 34.85% 39.05%, 34.05% 41.1%, 32.8% 42.8%, 31.9% 44.55%, 31.7% 45.45%, 32.2% 46.1%, 32.8% 46.7%, 33.15% 47.35%, 32.95% 47.95%, 32.5% 48.45%, 31.9% 48.75%, 31.1% 49.2%, 30.15% 50.15%, 29.05% 51.1%, 27.8% 52.65%, 26.9% 53.3%, 26.1% 53.45%, 25.65% 53.15%, 26.4% 51.55%, 27.2% 49.7%, 27.5% 47.2%, 28.45% 44.55%, 30% 41.4%, 31.4% 33.75%, 31.7% 32.2%, 32.05% 30.8%, 32.5% 29.55%, 33.15% 28.3%, 33.9% 27.5%, 35.15% 27.2%, 36.4% 27.35%, 37.5% 27.95%, 39.7% 29.55%, 42.65% 31.55%, 46.55% 35.15%, 49.55% 38.9%, 52.65% 38.45%, 55.45% 38.15%, 57.5% 37.8%, 55.8% 36.7%, 53.9% 35.45%, 52.65% 34.7%, 51.7% 34.4%, 50.95% 34.85%, 50.3% 35.15%, 49.85% 35.45%, 49.2% 35.65%, 48.6% 35.45%, 48.15% 34.85%, 47.95% 34.05%, 47.2% 33.15%, 45.8% 32.35%, 44.4% 31.7%, 43.6% 31.25%, 43.75% 30.45%, 44.4% 30.45%, 45.15% 30.65%, 45.95% 30.95%, 46.9% 31.1%, 48.3% 31.1%, 49.85% 31.25%, 51.55% 31.7%, 53.15% 32.5%, 54.85% 32.95%, 57.95% 33.75%, 60.8% 34.05%, 63.9% 35%, 65.95% 35.65%, 67.2% 36.1%, 67.8% 36.7%, 68.45% 37.5%, 68.6% 38.3%, 68.45% 39.05%, 67.95% 39.85%, 66.25% 40.95%, 64.4% 41.9%, 59.55% 43.9%, 54.7% 45%, 56.7% 49.55%, 58.15% 53.15%, 58.9% 55.45%, 59.2% 57.35%, 59.2% 58.9%, 58.75% 60.45%, 57.65% 61.9%, 56.4% 63.15%, 54.4% 64.05%, 53.15% 64.7%, 52.5% 66.4%, 52.95% 68.45%, 54.05% 73.45%, 54.4% 76.1%, 54.55% 79.85%, 54.2% 85.15%, 53.9% 89.55%);
-            height: 600px;
-            width: 600px;
-        }
-        
-        body {
-            background-color: black;
-            color: #fff;
-            font-family: "Libre Baskerville", serif;
-            line-height: 1.7;
-            position: relative;
-            width: 100%;
-        }
-        
-        main {
-            margin: 0 auto;
-            max-width: 60rem;
-            padding-left: 1rem;
-            padding-right: 6rem;
-            margin-top: -150px;
-        }
-        
-        p {
-            font-size: .9rem;
-            padding-top: 1rem;
-        }
-        
-        .title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            line-height: 1.1;
-            margin-top: 18%;
-            margin-bottom: .5rem;
-            padding-top: 3rem;
-        }
-        
-        .intro {
-            color: #f5cca3;
-            font-style: italic;
-            font-size: 1.15rem;
-        }
-        
-         ::-webkit-scrollbar {
-            width: 0;
-            background: inherit;
-        }
-        
-        #logo {
-            color: whitesmoke;
-            font-weight: 700;
-            font-size: 0.875rem;
-            letter-spacing: 0.125rem;
-            text-transform: uppercase;
-            margin: 0;
-            white-space: nowrap;
-        }
-        
-        ul li a:hover::after {
-            height: 5px;
-        }
-        
-        ul li a::after {
-            transition: all .3s ease;
-            position: absolute;
-            bottom: 38%;
-            content: '';
-            display: inline-block;
-            background-color: rgb(255, 255, 255);
-            background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(0, 255, 235, 0.6867121848739496) 100%);
-            ;
-            transform: translateX(-100%);
-            height: 0;
-        }
-        
-        .menu1 {
-            white-space: nowrap;
-        }
-        
-        ul li a.menu1::after {
-            width: 75px;
-        }
-        
-        ul li a.menu2::after {
-            width: 58px;
-        }
-        
-        ul li a.menu3::after {
-            width: 54px
-        }
-        
-        @supports (shape-outside: polygon(0 0, 0 100%, 100% 50%, 0 50%)) and ((-webkit-clip-path: polygon(0 0, 0 100%, 100% 50%, 0 50%)) or (clip-path: polygon(0 0, 0 100%, 100% 50%, 0 50%))) {
-            .title {
-                padding-top: 2rem;
-            }
-        }
-        
-        @supports (shape-outside: polygon(0 0, 0 100%, 100% 50%, 0 50%)) {
-            p {
-                margin: 0 0 0 auto;
-                max-width: 38rem;
-            }
-        }
-        
-        @supports ((-webkit-clip-path: polygon(0 0, 0 100%, 100% 50%, 0 50%)) or (clip-path: polygon(0 0, 0 100%, 100% 50%, 0 50%))) {
-            .img {
-                padding: 1.23rem;
-            }
-        }
-        
-        @supports ((-webkit-clip-path: polygon(0 0, 0 100%, 100% 50%, 0 50%)) or (clip-path: polygon(0 0, 0 100%, 100% 50%, 0 50%))) {
-            @supports not (shape-outside: polygon(0 0, 0 100%, 100% 50%, 0 50%)) {
-                .img {
-                    margin-left: -20%;
-                }
-            }
-        }
-    </style>
-
-    <script>
-        window.console = window.console || function(t) {};
-    </script>
+<link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
 
 
+  <title>CodePen - Shape Outside - Ellipse</title>
+  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 
-    <script>
-        if (document.location.search.match(/type=embed/gi)) {
-            window.parent.postMessage("resize", "*");
-        }
-    </script>
+  
+  
+<style>
+@supports not (shape-outside: circle()) {
+  body:before {
+    background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), color-stop(35%, #64c8c8), color-stop(65%, #64c8c8), to(rgba(255, 255, 255, 0)));
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #64c8c8 35%, #64c8c8 65%, rgba(255, 255, 255, 0) 100%);
+    content: 'shape-outside is not supported in this browser';
+    display: block;
+    font-size: .825rem;
+    left: 0;
+    letter-spacing: 0.02rem;
+    padding: .25rem 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    text-transform: uppercase;
+    top: 0;
+    width: 100%;
+  }
+}
+img {
+  float: left;
+  height: 600px;
+  width: 600px;
+  shape-outside: ellipse(224px 320px at 35.1% 50%);
+}
+
+body {
+  background-color: #00001a;
+  color: #fff;
+  font-family: "Libre Baskerville", serif;
+  line-height: 1.7;
+  position: relative;
+  width: 100%;
+}
+
+main,
+.title {
+  margin: 0 auto;
+  max-width: 60rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0 0 .5rem 0;
+  padding: 3.5rem 0 0;
+}
+.title span {
+  color: #cfedfc;
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0;
+}
+
+@supports (shape-outside: circle()) {
+  .title {
+    padding: 2.0rem 0 0;
+  }
+}
+.intro {
+  color: #cc9966;
+  font-style: italic;
+  font-size: 1.15rem;
+  text-shadow: 1px 1px 1px #333;
+}
+
+p {
+  font-size: .9rem;
+  margin: 0;
+  padding-top: 1.5rem;
+}
+
+.first {
+  padding-top: 1.22rem;
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
 
 
 </head>
 
-<body translate="no">
-    <main>
-        <div class="img"></div>
+<body translate="no" >
+  <main>
+	<img src="//s3-us-west-2.amazonaws.com/s.cdpn.io/150150/yoga.png">	
+	
+	<p class="title">Shape Outside Demo <span>ellipse</span>
+</p>
+	
+	<p class="intro">The following are a few of my favorite excerpts from the 2005 Stanford University commencement speech given by Steve Jobs.</p>
+	
+	<p class="first">“No one wants to die. Even people who want to go to heaven don't want to die to get there. And yet death is the destination we all share. No one has ever escaped it. And that is as it should be, because Death is very likely the single best invention of Life. It is Life's change agent. It clears out the old to make way for the new. Right now the new is you, but someday not too long from now, you will gradually become the old and be cleared away. Sorry to be so dramatic, but it is quite true.</p>
 
-        <p class="title">You definitely don't have time to read my biography... I will be brief.</span>
-        </p>
+	<p>Your time is limited, so don't waste it living someone else's life. Don't be trapped by dogma — which is living with the results of other people's thinking. Don't let the noise of others' opinions drown out your own inner voice. And most important, have the courage to follow your heart and intuition. They somehow already know what you truly want to become. Everything else is secondary.</p>
 
-        <p class="intro">The following are a few of my favorite excerpts from the 2005 Stanford University commencement speech given by Steve Jobs.</p>
-
-        <p class="first">“No one wants to die. Even people who want to go to heaven don't want to die to get there. And yet death is the destination we all share. No one has ever escaped it. And that is as it should be, because Death is very likely the single best invention
-            of Life. It is Life's change agent. It clears out the old to make way for the new. Right now the new is you, but someday not too long from now, you will gradually become the old and be cleared away. Sorry to be so dramatic, but it is quite
-            true.
-        </p>
-
-        <p>Your time is limited, so don't waste it living someone else's life. Don't be trapped by dogma — which is living with the results of other people's thinking. Don't let the noise of others' opinions drown out your own inner voice. And most important,
-            have the courage to follow your heart and intuition. They somehow already know what you truly want to become. Everything else is secondary.</p>
-
-        <p>Stay Hungry. Stay Foolish.”</p>
-
-    </main>
-    <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
-
-
-
-    <script id="rendered-js">
-    </script>
-
-
+	<p>Stay Hungry. Stay Foolish.”</p>	
+	
+</main>
+  
+  
+  
+  
+  
 
 </body>
 
 </html>
+ 
