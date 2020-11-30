@@ -1,143 +1,1044 @@
 <!DOCTYPE html>
-<html lang="en" >
+
+
+<html lang="RU">
 
 <head>
+    <meta charset="UTF-8">
+    <script>
+        window.NREUM || (NREUM = {});
+        NREUM.info = {
+            "beacon": "bam.nr-data.net",
+            "errorBeacon": "bam.nr-data.net",
+            "licenseKey": "NRJS-c685010af489d443818",
+            "applicationID": "405834861",
+            "transactionName": "clYMQEAKCg1dQBxEBl9KTVJHCQoRWVVWGxBZVhU=",
+            "queueTime": 0,
+            "applicationTime": 17,
+            "agent": ""
+        }
+    </script>
+    <script>
+        (window.NREUM || (NREUM = {})).loader_config = {
+            licenseKey: "NRJS-c685010af489d443818",
+            applicationID: "405834861"
+        };
+        window.NREUM || (NREUM = {}), __nr_require = function(e, t, n) {
+            function r(n) {
+                if (!t[n]) {
+                    var i = t[n] = {
+                        exports: {}
+                    };
+                    e[n][0].call(i.exports, function(t) {
+                        var i = e[n][1][t];
+                        return r(i || t)
+                    }, i, i.exports)
+                }
+                return t[n].exports
+            }
+            if ("function" == typeof __nr_require) return __nr_require;
+            for (var i = 0; i < n.length; i++) r(n[i]);
+            return r
+        }({
+            1: [function(e, t, n) {
+                function r() {}
 
-  <meta charset="UTF-8">
-<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"NRJS-c685010af489d443818","applicationID":"405834861","transactionName":"clYMQEAKCg1dQBxEBl9KTVJHCQoRWVVWGxBZVhU=","queueTime":0,"applicationTime":275,"agent":""}</script>
-<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-c685010af489d443818",applicationID:"405834861"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(6),c=e(7),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(8);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(5),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,y=["click","keydown","mousedown","pointerdown","touchstart"];y.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],4:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],5:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],6:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],7:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],8:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?f(e,c,o):o()}function n(n,r,i,o){if(!p.aborted||o){e&&e(n,r,i);for(var a=t(i),c=v(n),f=c.length,u=0;u<f;u++)c[u].apply(a,r);var d=s[w[n]];return d&&d.push([b,n,r,a]),a}}function l(e,t){h[e]=v(e).concat(t)}function m(e,t){var n=h[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return h[e]||[]}function g(e){return d[e]=d[e]||i(n)}function y(e,t){u(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var h={},w={},b={on:l,addEventListener:l,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:y,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var c="nr@context",f=e("gos"),u=e(6),s={},d={},p=t.exports=i();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=b.info=NREUM.info,t=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===p.readyState&&o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=e(2),c=e("handle"),f=e(6),u=e("ee"),s=e(4),d=window,p=d.document,l="addEventListener",m="attachEvent",v=d.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:v,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1184.min.js"},w=v&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),b=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:w,userAgent:s};e(1),e(3),p[l]?(p[l]("DOMContentLoaded",o,!1),d[l]("load",r,!1)):(p[m]("onreadystatechange",i),d[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0},{}],"wrap-function":[function(e,t,n){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(7),a="nr@original",c=Object.prototype.hasOwnProperty,f=!1;t.exports=function(e,t){function n(e,t,n,i){function nrWrapper(){var r,a,c,f;try{a=this,r=o(arguments),c="function"==typeof n?n(r,a):n||{}}catch(u){p([u,"",[r,a,i],c])}s(t+"start",[r,a,i],c);try{return f=e.apply(a,r)}catch(d){throw s(t+"err",[r,a,d],c),d}finally{s(t+"end",[r,a,f],c)}}return r(e)?e:(t||(t=""),nrWrapper[a]=e,d(e,nrWrapper),nrWrapper)}function u(e,t,i,o){i||(i="");var a,c,f,u="-"===i.charAt(0);for(f=0;f<t.length;f++)c=t[f],a=e[c],r(a)||(e[c]=n(a,u?c+i:i,o,c))}function s(n,r,i){if(!f||t){var o=f;f=!0;try{e.emit(n,r,i,t)}catch(a){p([a,n,r,i])}f=o}}function d(e,t){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(e);return n.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(r){p([r])}for(var i in e)c.call(e,i)&&(t[i]=e[i]);return t}function p(t){try{e.emit("internal-error",t)}catch(n){}}return e||(e=i),n.inPlace=u,n.flag=a,n}},{}]},{},["loader"]);</script>
-  
-<link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
-<meta name="apple-mobile-web-app-title" content="CodePen">
+                function i(e, t, n) {
+                    return function() {
+                        return o(e, [u.now()].concat(c(arguments)), t ? null : this, n), t ? void 0 : this
+                    }
+                }
+                var o = e("handle"),
+                    a = e(6),
+                    c = e(7),
+                    f = e("ee").get("tracer"),
+                    u = e("loader"),
+                    s = NREUM;
+                "undefined" == typeof window.newrelic && (newrelic = s);
+                var d = ["setPageViewName", "setCustomAttribute", "setErrorHandler", "finished", "addToTrace", "inlineHit", "addRelease"],
+                    p = "api-",
+                    l = p + "ixn-";
+                a(d, function(e, t) {
+                    s[t] = i(p + t, !0, "api")
+                }), s.addPageAction = i(p + "addPageAction", !0), s.setCurrentRouteName = i(p + "routeName", !0), t.exports = newrelic, s.interaction = function() {
+                    return (new r).get()
+                };
+                var m = r.prototype = {
+                    createTracer: function(e, t) {
+                        var n = {},
+                            r = this,
+                            i = "function" == typeof t;
+                        return o(l + "tracer", [u.now(), e, n], r),
+                            function() {
+                                if (f.emit((i ? "" : "no-") + "fn-start", [u.now(), r, i], n), i) try {
+                                    return t.apply(this, arguments)
+                                } catch (e) {
+                                    throw f.emit("fn-err", [arguments, this, e], n), e
+                                } finally {
+                                    f.emit("fn-end", [u.now()], n)
+                                }
+                            }
+                    }
+                };
+                a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","), function(e, t) {
+                    m[t] = i(l + t)
+                }), newrelic.noticeError = function(e, t) {
+                    "string" == typeof e && (e = new Error(e)), o("err", [e, u.now(), !1, t])
+                }
+            }, {}],
+            2: [function(e, t, n) {
+                function r() {
+                    return c.exists && performance.now ? Math.round(performance.now()) : (o = Math.max((new Date).getTime(), o)) - a
+                }
+
+                function i() {
+                    return o
+                }
+                var o = (new Date).getTime(),
+                    a = o,
+                    c = e(8);
+                t.exports = r, t.exports.offset = a, t.exports.getLastTimestamp = i
+            }, {}],
+            3: [function(e, t, n) {
+                function r(e, t) {
+                    var n = e.getEntries();
+                    n.forEach(function(e) {
+                        "first-paint" === e.name ? d("timing", ["fp", Math.floor(e.startTime)]) : "first-contentful-paint" === e.name && d("timing", ["fcp", Math.floor(e.startTime)])
+                    })
+                }
+
+                function i(e, t) {
+                    var n = e.getEntries();
+                    n.length > 0 && d("lcp", [n[n.length - 1]])
+                }
+
+                function o(e) {
+                    e.getEntries().forEach(function(e) {
+                        e.hadRecentInput || d("cls", [e])
+                    })
+                }
+
+                function a(e) {
+                    if (e instanceof m && !g) {
+                        var t = Math.round(e.timeStamp),
+                            n = {
+                                type: e.type
+                            };
+                        t <= p.now() ? n.fid = p.now() - t : t > p.offset && t <= Date.now() ? (t -= p.offset, n.fid = p.now() - t) : t = p.now(), g = !0, d("timing", ["fi", t, n])
+                    }
+                }
+
+                function c(e) {
+                    d("pageHide", [p.now(), e])
+                }
+                if (!("init" in NREUM && "page_view_timing" in NREUM.init && "enabled" in NREUM.init.page_view_timing && NREUM.init.page_view_timing.enabled === !1)) {
+                    var f, u, s, d = e("handle"),
+                        p = e("loader"),
+                        l = e(5),
+                        m = NREUM.o.EV;
+                    if ("PerformanceObserver" in window && "function" == typeof window.PerformanceObserver) {
+                        f = new PerformanceObserver(r);
+                        try {
+                            f.observe({
+                                entryTypes: ["paint"]
+                            })
+                        } catch (v) {}
+                        u = new PerformanceObserver(i);
+                        try {
+                            u.observe({
+                                entryTypes: ["largest-contentful-paint"]
+                            })
+                        } catch (v) {}
+                        s = new PerformanceObserver(o);
+                        try {
+                            s.observe({
+                                type: "layout-shift",
+                                buffered: !0
+                            })
+                        } catch (v) {}
+                    }
+                    if ("addEventListener" in document) {
+                        var g = !1,
+                            y = ["click", "keydown", "mousedown", "pointerdown", "touchstart"];
+                        y.forEach(function(e) {
+                            document.addEventListener(e, a, !1)
+                        })
+                    }
+                    l(c)
+                }
+            }, {}],
+            4: [function(e, t, n) {
+                function r(e, t) {
+                    if (!i) return !1;
+                    if (e !== i) return !1;
+                    if (!t) return !0;
+                    if (!o) return !1;
+                    for (var n = o.split("."), r = t.split("."), a = 0; a < r.length; a++)
+                        if (r[a] !== n[a]) return !1;
+                    return !0
+                }
+                var i = null,
+                    o = null,
+                    a = /Version\/(\S+)\s+Safari/;
+                if (navigator.userAgent) {
+                    var c = navigator.userAgent,
+                        f = c.match(a);
+                    f && c.indexOf("Chrome") === -1 && c.indexOf("Chromium") === -1 && (i = "Safari", o = f[1])
+                }
+                t.exports = {
+                    agent: i,
+                    version: o,
+                    match: r
+                }
+            }, {}],
+            5: [function(e, t, n) {
+                function r(e) {
+                    function t() {
+                        e(a && document[a] ? document[a] : document[i] ? "hidden" : "visible")
+                    }
+                    "addEventListener" in document && o && document.addEventListener(o, t, !1)
+                }
+                t.exports = r;
+                var i, o, a;
+                "undefined" != typeof document.hidden ? (i = "hidden", o = "visibilitychange", a = "visibilityState") : "undefined" != typeof document.msHidden ? (i = "msHidden", o = "msvisibilitychange") : "undefined" != typeof document.webkitHidden && (i = "webkitHidden", o = "webkitvisibilitychange", a = "webkitVisibilityState")
+            }, {}],
+            6: [function(e, t, n) {
+                function r(e, t) {
+                    var n = [],
+                        r = "",
+                        o = 0;
+                    for (r in e) i.call(e, r) && (n[o] = t(r, e[r]), o += 1);
+                    return n
+                }
+                var i = Object.prototype.hasOwnProperty;
+                t.exports = r
+            }, {}],
+            7: [function(e, t, n) {
+                function r(e, t, n) {
+                    t || (t = 0), "undefined" == typeof n && (n = e ? e.length : 0);
+                    for (var r = -1, i = n - t || 0, o = Array(i < 0 ? 0 : i); ++r < i;) o[r] = e[t + r];
+                    return o
+                }
+                t.exports = r
+            }, {}],
+            8: [function(e, t, n) {
+                t.exports = {
+                    exists: "undefined" != typeof window.performance && window.performance.timing && "undefined" != typeof window.performance.timing.navigationStart
+                }
+            }, {}],
+            ee: [function(e, t, n) {
+                function r() {}
+
+                function i(e) {
+                    function t(e) {
+                        return e && e instanceof r ? e : e ? f(e, c, o) : o()
+                    }
+
+                    function n(n, r, i, o) {
+                        if (!p.aborted || o) {
+                            e && e(n, r, i);
+                            for (var a = t(i), c = v(n), f = c.length, u = 0; u < f; u++) c[u].apply(a, r);
+                            var d = s[w[n]];
+                            return d && d.push([b, n, r, a]), a
+                        }
+                    }
+
+                    function l(e, t) {
+                        h[e] = v(e).concat(t)
+                    }
+
+                    function m(e, t) {
+                        var n = h[e];
+                        if (n)
+                            for (var r = 0; r < n.length; r++) n[r] === t && n.splice(r, 1)
+                    }
+
+                    function v(e) {
+                        return h[e] || []
+                    }
+
+                    function g(e) {
+                        return d[e] = d[e] || i(n)
+                    }
+
+                    function y(e, t) {
+                        u(e, function(e, n) {
+                            t = t || "feature", w[n] = t, t in s || (s[t] = [])
+                        })
+                    }
+                    var h = {},
+                        w = {},
+                        b = {
+                            on: l,
+                            addEventListener: l,
+                            removeEventListener: m,
+                            emit: n,
+                            get: g,
+                            listeners: v,
+                            context: t,
+                            buffer: y,
+                            abort: a,
+                            aborted: !1
+                        };
+                    return b
+                }
+
+                function o() {
+                    return new r
+                }
+
+                function a() {
+                    (s.api || s.feature) && (p.aborted = !0, s = p.backlog = {})
+                }
+                var c = "nr@context",
+                    f = e("gos"),
+                    u = e(6),
+                    s = {},
+                    d = {},
+                    p = t.exports = i();
+                p.backlog = s
+            }, {}],
+            gos: [function(e, t, n) {
+                function r(e, t, n) {
+                    if (i.call(e, t)) return e[t];
+                    var r = n();
+                    if (Object.defineProperty && Object.keys) try {
+                        return Object.defineProperty(e, t, {
+                            value: r,
+                            writable: !0,
+                            enumerable: !1
+                        }), r
+                    } catch (o) {}
+                    return e[t] = r, r
+                }
+                var i = Object.prototype.hasOwnProperty;
+                t.exports = r
+            }, {}],
+            handle: [function(e, t, n) {
+                function r(e, t, n, r) {
+                    i.buffer([e], r), i.emit(e, t, n)
+                }
+                var i = e("ee").get("handle");
+                t.exports = r, r.ee = i
+            }, {}],
+            id: [function(e, t, n) {
+                function r(e) {
+                    var t = typeof e;
+                    return !e || "object" !== t && "function" !== t ? -1 : e === window ? 0 : a(e, o, function() {
+                        return i++
+                    })
+                }
+                var i = 1,
+                    o = "nr@id",
+                    a = e("gos");
+                t.exports = r
+            }, {}],
+            loader: [function(e, t, n) {
+                function r() {
+                    if (!E++) {
+                        var e = b.info = NREUM.info,
+                            t = p.getElementsByTagName("script")[0];
+                        if (setTimeout(u.abort, 3e4), !(e && e.licenseKey && e.applicationID && t)) return u.abort();
+                        f(h, function(t, n) {
+                            e[t] || (e[t] = n)
+                        });
+                        var n = a();
+                        c("mark", ["onload", n + b.offset], null, "api"), c("timing", ["load", n]);
+                        var r = p.createElement("script");
+                        r.src = "https://" + e.agent, t.parentNode.insertBefore(r, t)
+                    }
+                }
+
+                function i() {
+                    "complete" === p.readyState && o()
+                }
+
+                function o() {
+                    c("mark", ["domContent", a() + b.offset], null, "api")
+                }
+                var a = e(2),
+                    c = e("handle"),
+                    f = e(6),
+                    u = e("ee"),
+                    s = e(4),
+                    d = window,
+                    p = d.document,
+                    l = "addEventListener",
+                    m = "attachEvent",
+                    v = d.XMLHttpRequest,
+                    g = v && v.prototype;
+                NREUM.o = {
+                    ST: setTimeout,
+                    SI: d.setImmediate,
+                    CT: clearTimeout,
+                    XHR: v,
+                    REQ: d.Request,
+                    EV: d.Event,
+                    PR: d.Promise,
+                    MO: d.MutationObserver
+                };
+                var y = "" + location,
+                    h = {
+                        beacon: "bam.nr-data.net",
+                        errorBeacon: "bam.nr-data.net",
+                        agent: "js-agent.newrelic.com/nr-1184.min.js"
+                    },
+                    w = v && g && g[l] && !/CriOS/.test(navigator.userAgent),
+                    b = t.exports = {
+                        offset: a.getLastTimestamp(),
+                        now: a,
+                        origin: y,
+                        features: {},
+                        xhrWrappable: w,
+                        userAgent: s
+                    };
+                e(1), e(3), p[l] ? (p[l]("DOMContentLoaded", o, !1), d[l]("load", r, !1)) : (p[m]("onreadystatechange", i), d[m]("onload", r)), c("mark", ["firstbyte", a.getLastTimestamp()], null, "api");
+                var E = 0
+            }, {}],
+            "wrap-function": [function(e, t, n) {
+                function r(e) {
+                    return !(e && e instanceof Function && e.apply && !e[a])
+                }
+                var i = e("ee"),
+                    o = e(7),
+                    a = "nr@original",
+                    c = Object.prototype.hasOwnProperty,
+                    f = !1;
+                t.exports = function(e, t) {
+                    function n(e, t, n, i) {
+                        function nrWrapper() {
+                            var r, a, c, f;
+                            try {
+                                a = this, r = o(arguments), c = "function" == typeof n ? n(r, a) : n || {}
+                            } catch (u) {
+                                p([u, "", [r, a, i], c])
+                            }
+                            s(t + "start", [r, a, i], c);
+                            try {
+                                return f = e.apply(a, r)
+                            } catch (d) {
+                                throw s(t + "err", [r, a, d], c), d
+                            } finally {
+                                s(t + "end", [r, a, f], c)
+                            }
+                        }
+                        return r(e) ? e : (t || (t = ""), nrWrapper[a] = e, d(e, nrWrapper), nrWrapper)
+                    }
+
+                    function u(e, t, i, o) {
+                        i || (i = "");
+                        var a, c, f, u = "-" === i.charAt(0);
+                        for (f = 0; f < t.length; f++) c = t[f], a = e[c], r(a) || (e[c] = n(a, u ? c + i : i, o, c))
+                    }
+
+                    function s(n, r, i) {
+                        if (!f || t) {
+                            var o = f;
+                            f = !0;
+                            try {
+                                e.emit(n, r, i, t)
+                            } catch (a) {
+                                p([a, n, r, i])
+                            }
+                            f = o
+                        }
+                    }
+
+                    function d(e, t) {
+                        if (Object.defineProperty && Object.keys) try {
+                            var n = Object.keys(e);
+                            return n.forEach(function(n) {
+                                Object.defineProperty(t, n, {
+                                    get: function() {
+                                        return e[n]
+                                    },
+                                    set: function(t) {
+                                        return e[n] = t, t
+                                    }
+                                })
+                            }), t
+                        } catch (r) {
+                            p([r])
+                        }
+                        for (var i in e) c.call(e, i) && (t[i] = e[i]);
+                        return t
+                    }
+
+                    function p(t) {
+                        try {
+                            e.emit("internal-error", t)
+                        } catch (n) {}
+                    }
+                    return e || (e = i), n.inPlace = u, n.flag = a, n
+                }
+            }, {}]
+        }, {}, ["loader"]);
+    </script>
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://github.githubassets.com/favicons/favicon.svg" />
+    <link rel="mask-icon" type="" href="https://github.githubassets.com/favicons/favicon.svg" color="#111" />
+
+    <title>Munister - My Books</title>
 
 
-<link rel="mask-icon" type=""https://github.githubassets.com/favicons/favicon.svg" color="#111" />
 
 
-  <title>About me</title>
-  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700,300);
+        * {
+            margin: 0;
+            padding: 0;
+            outline: none;
+            list-style: none;
+            text-decoration: none;
+            box-sizing: border-box;
+        }
+        
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+        }
+        
+        body {
+            background: #000;
+            font-family: 'Roboto', sans-serif;
+            overflow: hidden;
+        }
+        
+        nav {
+            z-index: 10;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            line-height: 80px;
+        }
+        
+        nav ul {
+            position: absolute;
+            top: -80px;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            padding-left: 50px;
+            opacity: 0;
+            transition: 0.6s all ease-in-out 0.5s;
+            -webkit-transition: 0.6s all ease-in-out 0.5s;
+        }
+        
+        nav:hover ul {
+            top: 0 !important;
+            opacity: 1 !important;
+            transition: 0.6s all ease-in-out;
+            -webkit-transition: 0.6s all ease-in-out;
+        }
+        
+        nav ul li {
+            display: inline-block;
+            margin-left: 50px;
+            text-align: left;
+            width: 10%;
+            cursor: pointer;
+        }
+        
+        nav ul li a {
+            color: rgba(255, 255, 255, 0.9);
+            text-transform: uppercase;
+            font-weight: 500;
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            font-size: 14px;
+            letter-spacing: 2px;
+        }
+        
+        nav ul li a:after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: #fff;
+            top: 39px;
+            left: -100%;
+            transition: 0.6s all ease-in-out;
+            -webkit-transition: 0.6s all ease-in-out;
+        }
+        
+        nav ul li:hover a:after {
+            left: 0;
+        }
+        
+        nav ul li.active a:after {
+            left: 0;
+        }
+        
+        .perso {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .perso ul {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .perso ul li {
+            float: left;
+            width: calc(100% / 5);
+            background: #fff;
+            height: 100%;
+            box-shadow: 0 0 100px rgba(0, 0, 0, 0.8) inset;
+            position: relative;
+            cursor: pointer;
+            background-size: cover !important;
+            transition: 0.7s all ease-in-out;
+            -webkit-transition: 0.7s all ease-in-out;
+        }
+        
+        .perso ul li.adapt {
+            width: 15%;
+        }
+        
+        .perso ul li.hovered {
+            width: 40%;
+        }
+        
+        .perso ul li p {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            height: 80px;
+            line-height: 90px;
+            width: 150px;
+            text-transform: uppercase;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            transition: 0.6s all ease-in-out 0.2s;
+            -webkit-transition: 0.6s all ease-in-out 0.2s;
+        }
+        
+        .perso ul li p:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 5px;
+            width: 100%;
+            background: #fff;
+            transform: scaleX(1);
+            -webkit-transform: scaleX(1);
+            opacity: 1;
+            transition: 0.6s all ease-in-out 0.2s;
+            -webkit-transition: 0.6s all ease-in-out 0.2s;
+        }
+        
+        .perso ul li p span {
+            position: absolute;
+            top: -20px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            color: #000;
+            background: #fff;
+            height: 40px;
+            line-height: 40px;
+            width: 40px;
+            overflow: hidden;
+            transform: perspective(1000px) rotateX(-90deg) rotateZ(45deg);
+            -webkit-transform: perspective(1000px) rotateX(-90deg) rotateZ(45deg);
+            transition: 0.4s all ease-out 0.2s;
+            -webkit-transition: 0.4s all ease-out 0.2s;
+        }
+        
+        .perso ul li p span:after {
+            content: "+";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            width: 40px;
+            font-size: 24px;
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+        }
+        
+        .perso ul li:hover p {
+            transform: scale(1.4);
+            -webkit-transform: scale(1.4);
+            width: 200px;
+            letter-spacing: 2px;
+        }
+        
+        .perso ul li:hover p:before {
+            opacity: 1;
+            transform: scaleX(0);
+            -webkit-transform: scaleX(0);
+        }
+        
+        .perso ul li:hover p span {
+            top: -20px;
+            transform: perspective(1000px) rotateX(0deg) rotateZ(45deg);
+            -webkit-transform: perspective(1000px) rotateX(0deg) rotateZ(45deg);
+            transition: 0.4s all ease-out 0.8s;
+            -webkit-transition: 0.4s all ease-out 0.8s;
+        }
+        
+        .perso ul li:nth-of-type(1) {
+            background: url(https://munister-v.github.io/image/palmanova.jpg) no-repeat center center;
+        }
+        
+        .perso ul li:nth-of-type(2) {
+            background: url(https://munister-v.github.io/image/forest.jpeg) no-repeat center center;
+        }
+        
+        .perso ul li:nth-of-type(3) {
+            background: url(munister-v.github.io/image/espanol.jpg) no-repeat center center;
+        }
+        
+        .perso ul li:nth-of-type(4) {
+            background: url(munister-v.github.io/image/toledo.jpg) no-repeat center center;
+            background-size: cover;
+        }
+        
+        .perso ul li:nth-of-type(5) {
+            background: url(https://img4.goodfon.ru/original/2500x1667/0/21/ispaniia-gorod-toledo-vecher-noch-ogni.jpg) no-repeat center center;
+        }
+        
+        article {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            z-index: 2;
+        }
+        
+        article:nth-of-type(1) {
+            background: url(https://munister-v.github.io/image/palmanova.jpg) no-repeat top center;
+        }
+        
+        article:nth-of-type(2) {
+            background: url(https://munister-v.github.io/image/forest.jpeg) no-repeat top center;
+        }
+        
+        article:nth-of-type(3) {
+            background: url(munister-v.github.io/image/espanol.jpg) no-repeat top center;
+        }
+        
+        article:nth-of-type(4) {
+            background: url(munister-v.github.io/image/toledo.jpg) no-repeat top center;
+            background-size: cover;
+        }
+        
+        article:nth-of-type(5) {
+            background: url(https://img4.goodfon.ru/original/2500x1667/0/21/ispaniia-gorod-toledo-vecher-noch-ogni.jpg) no-repeat top center;
+        }
+        
+        article .text-wrap {
+            position: absolute;
+            top: 0;
+            left: 150px;
+            bottom: 0;
+            width: 600px;
+            height: 400px;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            margin: auto 0;
+            box-sizing: border-box;
+            padding: 80px 40px;
+            opacity: 0;
+            animation: 0.6s fadeInLeft ease-out forwards 0.8s;
+            -webkit-animation: 0.6s fadeInLeft ease-out forwards 0.8s;
+        }
+        
+        article h2 {
+            margin-bottom: 20px;
+            font-size: 48px;
+            text-transform: uppercase;
+        }
+        
+        article p {
+            letter-spacing: 1px;
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 24px;
+        }
+        
+        article span.close {
+            color: #fff;
+            position: absolute;
+            top: 12%;
+            left: 80%;
+            background: rgba(0, 0, 0, 0.7);
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            width: 50px;
+            cursor: pointer;
+            opacity: 0;
+            animation: 0.6s fadeInLeft ease-out forwards 1.2s;
+            -webkit-animation: 0.6s fadeInLeft ease-out forwards 1.2s;
+        }
+        
+        article span.close:after {
+            content: "Back to selection";
+            position: absolute;
+            width: 80px;
+            line-height: 10px;
+            color: #000;
+            bottom: -30px;
+            left: -15px;
+            text-transform: uppercase;
+            font-size: 10px;
+        }
+        
+        svg {
+            display: none;
+        }
+        
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                -webkit-transform: translate3d(-100%, 0, 0);
+                transform: translate3d(-100%, 0, 0);
+                filter: url('#blur');
+                -webkit-filter: url('#blur');
+            }
+            60% {
+                opacity: 1;
+                -webkit-transform: translate3d(8%, 0, 0);
+                transform: translate3d(8%, 0, 0);
+                filter: url('#blur');
+                -webkit-filter: url('#blur');
+            }
+            80% {
+                opacity: 1;
+                -webkit-transform: translate3d(-5%, 0, 0);
+                transform: translate3d(-5%, 0, 0);
+                filter: url('#blur');
+                -webkit-filter: url('#blur');
+            }
+            100% {
+                opacity: 1;
+                -webkit-transform: none;
+                transform: none;
+                filter: none;
+                -webkit-filter: none;
+            }
+        }
+        
+        div.link-cont {
+            position: relative;
+        }
+        
+        a.link {
+            background: black;
+            position: absolute;
+            font-size: xx-large;
+            color: aliceblue;
+            padding: 5px;
+            right: -39px;
+            border-top: 1px dashed white;
+            border-left: 1px dashed white;
+            bottom: -26px;
+            border-radius: 27px 0 0;
+            padding-left: 14px;
+        }
+        
+        .second-link {
+            top: 24px;
+        }
+        
+        .third-link {
+            bottom: -48px;
+        }
+        
+        .fourth-link {
+            bottom: -48px;
+        }
+        
+        .fifth-link {
+            bottom: -120px;
+        }
+    </style>
 
-  
-  
-<style>
-@supports not (shape-outside: circle()) {
-  body:before {
-    background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), color-stop(35%, #64c8c8), color-stop(65%, #64c8c8), to(rgba(255, 255, 255, 0)));
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #64c8c8 35%, #64c8c8 65%, rgba(255, 255, 255, 0) 100%);
-    content: 'shape-outside is not supported in this browser';
-    display: block;
-    font-size: .825rem;
-    left: 0;
-    letter-spacing: 0.02rem;
-    padding: .25rem 0;
-    position: absolute;
-    right: 0;
-    text-align: center;
-    text-transform: uppercase;
-    top: 0;
-    width: 100%;
-  }
-}
-img {
-  float: left;
-  height: 600px;
-  width: 600px;
-  shape-outside: ellipse(224px 320px at 35.1% 50%);
-}
+    <script>
+        window.console = window.console || function(t) {};
+    </script>
 
-body {
-  background-color: #00001a;
-  color: #fff;
-  font-family: "Libre Baskerville", serif;
-  line-height: 1.7;
-  position: relative;
-  width: 100%;
-}
 
-main,
-.title {
-  margin: 0 auto;
-  max-width: 60rem;
-}
 
-.title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  line-height: 1.1;
-  margin: 0 0 .5rem 0;
-  padding: 3.5rem 0 0;
-}
-.title span {
-  color: #cfedfc;
-  font-size: 2rem;
-  font-style: italic;
-  font-weight: 400;
-  line-height: 1.2;
-  margin: 0;
-}
-
-@supports (shape-outside: circle()) {
-  .title {
-    padding: 2.0rem 0 0;
-  }
-}
-.intro {
-  color: #cc9966;
-  font-style: italic;
-  font-size: 1.15rem;
-  text-shadow: 1px 1px 1px #333;
-}
-
-p {
-  font-size: .9rem;
-  margin: 0;
-  padding-top: 1.5rem;
-}
-
-.first {
-  padding-top: 1.22rem;
-}
-</style>
-
-  <script>
-  window.console = window.console || function(t) {};
-</script>
-
-  
-  
-  <script>
-  if (document.location.search.match(/type=embed/gi)) {
-    window.parent.postMessage("resize", "*");
-  }
-</script>
+    <script>
+        if (document.location.search.match(/type=embed/gi)) {
+            window.parent.postMessage("resize", "*");
+        }
+    </script>
 
 
 </head>
 
-<body translate="no" >
-  <main>
-	<img src="//s3-us-west-2.amazonaws.com/s.cdpn.io/150150/yoga.png">	
-	
-	<p class="title">About me<span></span>
-</p>
-	
-	<p class="intro">The following are a few of my favorite excerpts from the 2005 Stanford University commencement speech given by Steve Jobs.</p>
-	
-	<p class="first">“No one wants to die. Even people who want to go to heaven don't want to die to get there. And yet death is the destination we all share. No one has ever escaped it. And that is as it should be, because Death is very likely the single best invention of Life. It is Life's change agent. It clears out the old to make way for the new. Right now the new is you, but someday not too long from now, you will gradually become the old and be cleared away. Sorry to be so dramatic, but it is quite true.</p>
+<body translate="no">
+    <!--CREDITS TO UNSPLASH.COM FOR THE USED PICTURES-->
 
-	<p>Your time is limited, so don't waste it living someone else's life. Don't be trapped by dogma — which is living with the results of other people's thinking. Don't let the noise of others' opinions drown out your own inner voice. And most important, have the courage to follow your heart and intuition. They somehow already know what you truly want to become. Everything else is secondary.</p>
+    <!--FIXED NAVIGATION-->
 
-	<p>Stay Hungry. Stay Foolish.”</p>	
-	
-</main>
-  
-  
-  
-  
-  
+    <nav role='navigation'>
+        <ul>
+            <li><a href="https://munister-v.github.io/">Home</a></li>
+            <li><a href="https://munister-v.github.io/me.html">About</a></li>
+            <li class="active"><a href="#">Projets</a></li>
+            <li><a href="https://t.me/vyanetto">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- CHARACTER SELECTION -->
+
+    <section class="perso">
+        <ul>
+            <li>
+                <p>Хрестоматия<span></span></p>
+            </li>
+            <li>
+                <p>Практикум<span></span></p>
+            </li>
+            <li>
+                <p>FBD в МПС<span></span></p>
+            </li>
+            <li>
+                <p>Курс IoE<span></span></p>
+            </li>
+            <li>
+                <p>Network-on-Chip<span></span></p>
+            </li>
+        </ul>
+    </section>
+
+    <!-- PAGE CONTENT, Order is important, nth-of-type is used -->
+
+    <article class="john">
+        <span class="close">x</span>
+        <div class="text-wrap">
+            <h2>Хрестоматия</h2>
+            <p> В учебно-теоретическом издании (хрестоматии) «Компьютерные сети. IoT и межмашинное взаимодействие» проведена работа по систематизации сведений, стандарты и подходы к технической реализации концепции Интернета вещей (Internet of Things, IoT),
+                технологий рабочих групп IEEE 802.11, 802.15 (IEEE 802.15.4). Рассмотрена новая (расширенная) систематизация локально-вычислительных сетей по территориальному признаку: описана концепция построения Body Area Network.
+            </p>
+            <div class="link-cont">
+                <a class="link" href="#">Ссылка в Сибирь</a>
+            </div>
+        </div>
+    </article>
+    <article class="steve">
+        <span class="close">x</span>
+        <div class="text-wrap">
+            <h2>Практикум</h2>
+            <p>Данное издание предназначено для получения практических навыков и умений посредством организации выполнения индивидуальных заданий в рамках проведения учебных практик как рекомендованного решения использования в контексте конкретных междисциплинарных
+                курсов, связанных с принципами организации межсетевого взаимодействия, архитектуры информационных систем, в частности, в рамках платформы «Internet of things»</p>
+            <div class="link-cont second-link">
+                <a class="link" href="#">Ссылка в Сибирь</a>
+            </div>
+        </div>
+    </article>
+    <article class="petra">
+        <span class="close">x</span>
+        <div class="text-wrap">
+            <h2>FBD в МПС</h2>
+            <p>В учебно-практическом пособии «Визуальное программирование (FBD) для микропроцессорных систем и IoT» уделено большое внимание изучению и применению в прикладных задачах распространенных микропроцессорных систем (MCU/SoC) посредством их конфигурирования
+                (данных управляющих устройств) на графическом языке программирования FBD (Function Block Diagram) </p>
+            <div class="link-cont third-link">
+                <a class="link" href="#">Ссылка в Сибирь</a>
+            </div>
+        </div>
+    </article>
+    <article class="jay">
+        <span class="close">x</span>
+        <div class="text-wrap">
+            <h2>Курс IoE</h2>
+            <p>Интегрированный учебный курс «Интернет вещей. Межмашинное взаимодействие. Программирование в компьютерных системах и сетях.» для профессиональных модулей и дисциплин в рамках методологии преподавания профессионального цикла для направлений
+                подготовки укрупненной группы: 09.00.00 «Информатика и вычислительная техника»</p>
+            <div class="link-cont fourth-link">
+                <a class="link" href="#">Ссылка в Сибирь</a>
+            </div>
+        </div>
+    </article>
+    <article class="bork">
+        <span class="close">x</span>
+        <div class="text-wrap">
+            <h2>Network-on-Chip</h2>
+            <p>Акцентуации: архитектура и генезис NoC, SoC, архитектура ARM, реализация в SoC 5G/IEEE 802.11ax (Wi-Fi 6), 802.11be (Wi-Fi 7), обзор современных решений на рынке мобильных устройств и контроллеров. </p>
+            <div class="link-cont fifth-link">
+                <a class="link" href="#">Ссылка в Сибирь</a>
+            </div>
+        </div>
+    </article>
+
+    <!--FILTER SVG FOR MOTION BLUR-->
+
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="filters">
+    <defs>
+      <filter id="blur">
+          <feGaussianBlur id="blur-filter" in="SourceGraphic" stdDeviation="6,0" /><!--Here you can change the value-->
+      </filter>
+  </defs>
+</svg>
+    <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js'></script>
+
+    <script id="rendered-js">
+        var timer;
+        $(".perso ul li").mouseenter(function() {
+            var that = this;
+            timer = setTimeout(function() {
+                $('.perso ul li').removeClass('hovered').addClass('adapt');
+                $(that).addClass('hovered');
+            }, 300);
+        }).mouseleave(function() {
+            clearTimeout(timer);
+        });
+
+
+        $('.perso ul li:nth-of-type(1)').click(function() {
+            $('.perso').fadeOut(800);
+            $('article:nth-of-type(1)').delay(200).fadeIn(1000);
+        });
+        $('.perso ul li:nth-of-type(2)').click(function() {
+            $('.perso').fadeOut(800);
+            $('article:nth-of-type(2)').delay(500).fadeIn(800);
+        });
+        $('.perso ul li:nth-of-type(3)').click(function() {
+            $('.perso').fadeOut(800);
+            $('article:nth-of-type(3)').delay(200).fadeIn(1000);
+        });
+        $('.perso ul li:nth-of-type(4)').click(function() {
+            $('.perso').fadeOut(800);
+            $('article:nth-of-type(4)').delay(300).fadeIn(1000);
+        });
+        $('.perso ul li:nth-of-type(5)').click(function() {
+            $('.perso').fadeOut(800);
+            $('article:nth-of-type(5)').delay(300).fadeIn(1000);
+        });
+
+        $('.close').click(function() {
+            $('article').fadeOut(800);
+            $('.perso').delay(300).fadeIn(800);
+        });
+        //# sourceURL=pen.js
+    </script>
+
+
 
 </body>
 
 </html>
- 
