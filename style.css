@@ -815,3 +815,4 @@ ul li a.menu3::after {
     left: -280px;
     background: linear-gradient(90deg, rgba(229, 172, 142, 0), rgb(0 0 0) 50%, rgb(0 0 0) 80%, rgba(229, 172, 142, 0));
     animation: blick 7s infinite;
+}
