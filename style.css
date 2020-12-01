@@ -790,17 +790,6 @@ ul li a.menu3::after {
     }
 }
 
-@keyframes blick {
-    from {
-        transform: translateX(-100px)
-    }
-    20% {
-        transform: translateX(530px)
-    }
-    to {
-        transform: translateX(531px)
-    }
-}
 
 #logo {
     position: relative;
