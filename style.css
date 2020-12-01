@@ -1,6 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=EB+Garamond:400,500|Roboto:400,700");
 
 
+nav {
+    
+    overflow: hidden;
+}
 .container {
     margin: auto;
     padding: 0 1rem;
