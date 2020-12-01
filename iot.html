@@ -1,0 +1,190 @@
+
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+
+  <meta charset="UTF-8">
+  
+<link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.sfo2.cdn.digitaloceanspaces.com/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+<meta name="apple-mobile-web-app-title" content="CodePen">
+
+<link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.sfo2.cdn.digitaloceanspaces.com/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+
+<link rel="mask-icon" type="" href="https://cpwebassets.sfo2.cdn.digitaloceanspaces.com/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+
+
+  <title>CodePen - iot-map</title>
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width">
+  
+  <link rel='stylesheet' href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'>
+  
+<style>
+body {
+  font-family: sans-serif;
+  margin: 0;
+  background: #f8f8f8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.map {
+  background: url("https://raw.githubusercontent.com/futurice/tamperefutucafe/master/Futurice-sisatilapaikannus-kartta-tammerforce.png") no-repeat 50% 50%;
+  background-size: cover;
+  position: relative;
+  width: 96vw;
+  height: 78vw;
+  margin: 2vw auto;
+}
+
+.location {
+  width: 24px;
+  height: 24px;
+  margin: -12px 0 -12px;
+  position: absolute;
+  background: #FFF;
+  border: 3px solid #EEE;
+  border-radius: 50%;
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  font-size: 14px;
+  color: #46289A;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+.location:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+.location.indicator--alert {
+  border-color: #ffc5cf;
+}
+.location.indicator--ok {
+  border-color: #a1e1aa;
+}
+
+.badge {
+  position: absolute;
+  right: -7px;
+  top: -7px;
+  min-width: 15px;
+  display: inline-block;
+  background: #FF9090;
+  color: #fff;
+  border-radius: 3px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  font-size: 11px;
+}
+
+@media (min-width: 768px) {
+  body {
+    padding: 20px;
+  }
+
+  .map {
+    width: 60vw;
+    height: 48vw;
+  }
+
+  .location {
+    width: 34px;
+    height: 34px;
+    margin: -17px 0 -17px;
+    font-size: 20px;
+    border-width: 4px;
+  }
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+</head>
+
+<body translate="no" >
+  <div class="map">
+    
+  <!-- these with React something like this
+    locations = [
+      { x: 0.34, y: 0.55, type: LocationTypes.TEMPERATURE },
+      { x: 0.34, y: 0.68, type: LocationTypes.TEMPERATURE }, ...
+    ];
+    locations.map(this.renderLocation)
+
+    renderLocation(location) {
+      return (<div className="location match-type-to-icon" style={{
+        left: `${location.x * 100}%`,
+        top: `${location.y * 100}%`
+      }}
+      />)
+    }
+  -->
+  <div class="location ion-thermometer" style="left: 35%; top: 57%"></div>
+  <div class="location ion-thermometer indicator--alert" style="left: 35%; top: 70%"></div>
+  <div class="location ion-thermometer" style="left: 35%; top: 79%"></div>
+  <div class="location ion-thermometer" style="left: 35%; top: 92%"></div>
+
+  <div class="location ion-thermometer" style="left: 91%; top: 82%"></div>
+    <div class="location ion-thermometer" style="left: 91%; top: 94%"></div>
+
+      <div class="location ion-android-phone-portrait" style="left: 78%; top: 48%"></div>
+  
+       <div class="location ion-woman indicator--ok" style="left: 91%; top: 41.5%"></div> 
+
+         <div class="location ion-woman indicator--ok" style="left: 91%; top: 35.5%"></div> 
+ 
+           <div class="location ion-woman indicator--alert" style="left: 91%; top: 29%"></div> 
+  
+  
+  <div class="location ion-coffee indicator--alert" style="left: 10.5%; top: 29%"></div>
+  <div class="location ion-android-bulb" style="left: 60%; top: 43%"></div>
+
+  <div class="location ion-android-people" style="left: 92.5%; top: 58%">
+    <span class="badge">3</span>
+  </div>
+  
+   <div class="location ion-beer indicator--ok" style="left: 1%; top: 3%">
+  </div>
+   <div class="location ion-ios-book" style="left: 48%; top: 35%">
+  </div>
+     <div class="location ion-key" style="left: 47%; top: 9%">
+  </div>
+  
+  
+  
+</div>
+  
+  
+  
+  
+
+</body>
+
+</html>
+ 
