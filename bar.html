@@ -13,200 +13,465 @@
 <link rel="mask-icon" type="" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
 
 
-  <title>CodePen - Sweet Circle Menu</title>
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <title>CodePen - Furniture Store (dribbble shot by Jekin Gala)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=PT+Serif:700|Roboto" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 
   
   
 <style>
-#mainB {
+html,
+body {
+  height: 100%;
+  min-height: 100%;
+  background: #a56a44;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: calc(.2vw + 12px);
+  line-height: 1.4;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin-top: 0;
+}
+h1 span, h2 span, h3 span, h4 span, h5 span, h6 span, p span {
+  vertical-align: middle;
+}
+h1 span + span, h2 span + span, h3 span + span, h4 span + span, h5 span + span, h6 span + span, p span + span {
+  display: -webkit-inline-box;
+  display: inline-flex;
+  -webkit-box-align: center;
+          align-items: center;
+}
+h1 span + span::before, h2 span + span::before, h3 span + span::before, h4 span + span::before, h5 span + span::before, h6 span + span::before, p span + span::before {
+  display: inline-block;
+  content: "";
+  width: 3.5em;
+  height: 1px;
+  background: white;
+  margin: 0 .5em 0 .3em;
+}
+
+h1,
+.h1,
+.nav {
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 2.4rem;
+  margin-bottom: 0;
+}
+
+h2, h3, .nav {
+  font-family: 'PT Serif', serif;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 0;
+  padding-bottom: .6rem;
+}
+
+h4 {
+  margin-bottom: 0;
+  padding-bottom: 1.6rem;
+}
+
+a {
+  color: inherit;
+}
+
+svg {
+  fill: currentColor;
+}
+
+img,
+svg {
+  vertical-align: middle;
+}
+
+.logo {
+  text-decoration: none;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+.header {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  grid-template: repeat(3, [row-start] minmax(25vh, 1fr))/repeat(12, [col-start] 1fr);
+  will-change: transform, width;
+  -webkit-transition: 0.5s -webkit-transform cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition: 0.5s -webkit-transform cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition: 0.5s transform cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition: 0.5s transform cubic-bezier(0.39, 0.575, 0.565, 1), 0.5s -webkit-transform cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+@media (max-width: 700px) {
+  .header {
+    grid-template: repeat(3, [row-start] 1fr)/repeat(6, [col-start] 1fr);
+  }
+}
+.header[data-menustate="open"] {
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+  -webkit-animation: expand 0.5s cubic-bezier(0.39, 0.575, 0.565, 1) 1;
+          animation: expand 0.5s cubic-bezier(0.39, 0.575, 0.565, 1) 1;
+}
+.header[data-menustate="open"] .grid-item {
+  -webkit-animation: shuffle 0.5s cubic-bezier(0.39, 0.575, 0.565, 1) 1;
+          animation: shuffle 0.5s cubic-bezier(0.39, 0.575, 0.565, 1) 1;
+}
+.header[data-menustate="open"] .logo {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.article {
+  padding: 1.6rem 3rem 1.8rem 1.4rem;
+}
+.article + .article {
+  margin-top: auto;
+  padding-top: 0;
+}
+.article--align-right {
+  text-align: right;
+}
+
+.rotate {
+  display: inline-block;
+  margin: 0;
+}
+.rotate--right {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  -webkit-transform-origin: center right;
+          transform-origin: center right;
+}
+
+.object-fit {
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.nav,
+.nav-toggle {
   position: absolute;
-  top: 0;
-  left: 0;
-  background: url("http://grantcr.com/files/bg.png") 0 0;
-  z-index: -9000;
-  opacity: 0.98;
-}
-
-.bg {
-  background: url("http://grantcr.com/files/texture.png") 0 0;
-  height: 100%;
-  opacity: 0.99;
-  z-index: -7000;
-}
-
-.bg1 {
-  background: url("http://grantcr.com/files/bgg.png") 0 0;
-  height: 100%;
-  opacity: 0.95;
-  z-index: -7000;
-}
-
-.over {
-  background: url("http://grantcr.com/files/top.png") top center no-repeat;
-  position: fixed;
-  opacity: 0.8;
-  width: 100%;
-  top: -150px;
-  bottom: 90%;
-  z-index: 300;
-  height: 500px;
-}
-
-.dial {
-  width: 165px;
-  height: 165px;
-  border-radius: 50%;
-  position: relative;
-  display: block;
-  margin: auto auto;
-  top: 300px;
-  opacity: 0.9;
-  *zoom: 1;
-  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFC9CFD7', endColorstr='#FFB0B7C1');
-  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2M5Y2ZkNyIvPjxzdG9wIG9mZnNldD0iNDYlIiBzdG9wLWNvbG9yPSIjMmIyZjNlIiBzdG9wLW9wYWNpdHk9IjAuOTciLz48c3RvcCBvZmZzZXQ9IjQ4JSIgc3RvcC1jb2xvcj0iIzJiMmYzZSIgc3RvcC1vcGFjaXR5PSIwLjk3Ii8+PHN0b3Agb2Zmc2V0PSI1MiUiIHN0b3AtY29sb3I9IiMyYjJmM2UiLz48c3RvcCBvZmZzZXQ9IjU1JSIgc3RvcC1jb2xvcj0iIzJiMmYzZSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2IwYjdjMSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
-  background-size: 100%;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #c9cfd7), color-stop(46%, rgba(43, 47, 62, 0.97)), color-stop(48%, rgba(43, 47, 62, 0.97)), color-stop(52%, #2b2f3e), color-stop(55%, #2b2f3e), color-stop(100%, #b0b7c1));
-  background-image: -moz-linear-gradient(top, #c9cfd7 0%, rgba(43, 47, 62, 0.97) 46%, rgba(43, 47, 62, 0.97) 48%, #2b2f3e 52%, #2b2f3e 55%, #b0b7c1 100%);
-  background-image: -webkit-linear-gradient(top, #c9cfd7 0%, rgba(43, 47, 62, 0.97) 46%, rgba(43, 47, 62, 0.97) 48%, #2b2f3e 52%, #2b2f3e 55%, #b0b7c1 100%);
-  background-image: linear-gradient(to bottom, #c9cfd7 0%, rgba(43, 47, 62, 0.97) 46%, rgba(43, 47, 62, 0.97) 48%, #2b2f3e 52%, #2b2f3e 55%, #b0b7c1 100%);
-  z-index: 99999;
-  box-shadow: 2px 15px 15px 7px rgba(0, 0, 0, 0.3), -15px 2px 5px rgba(0, 0, 0, 0.2), 1px 10px 15px rgba(0, 0, 0, 0.5), 0px 10px 5px rgba(0, 0, 0, 0.7);
-}
-.dial .grad {
-  background: url("http://grantcr.com/files/dail.png") 0 0 no-repeat;
-  width: 165px;
-  z-index: 999;
-  height: 165px;
-  position: absolute;
-  top: 3px;
-  border-radius: 50%;
-  left: 3px;
-  opacity: 1;
-}
-
-.container {
-  width: 325px;
-  position: relative;
-  margin: 0 auto;
-  height: 100%;
+  color: white;
 }
 
 .nav {
-  position: relative;
-  width: 100%;
-  top: 200px;
+  width: 50%;
+  height: 100vh;
+  right: 100%;
+  z-index: 1;
+  background: #a56a44;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-pack: center;
+          justify-content: center;
+  text-align: left;
+  will-change: right;
+  -webkit-transition: 0.5s cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition: 0.5s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+@media (max-width: 700px) {
+  .nav {
+    width: 100%;
+  }
+}
+.nav a {
+  text-decoration: none;
+  will-change: color, blur;
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  -webkit-transition-delay: var(--delay, 0.5s);
+          transition-delay: var(--delay, 0.5s);
+  opacity: 0;
+  -webkit-filter: blur(2px);
+          filter: blur(2px);
+  margin-left: 18vw;
+}
+.nav a + a {
+  margin-top: .6em;
+}
+.nav[data-state="open"] {
+  right: 50%;
+  color: white;
+}
+@media (max-width: 700px) {
+  .nav[data-state="open"] {
+    right: 10%;
+  }
+}
+.nav[data-state="open"] a {
+  opacity: 1;
+  margin-left: 20vw;
+  -webkit-filter: blur(0);
+          filter: blur(0);
 }
 
-#nav li {
-  display: inline-block;
-  list-style-type: none;
-  float: left;
-  margin-right: 43px;
-}
-#nav li a {
+.nav-toggle {
+  top: 1rem;
+  left: 1rem;
+  z-index: 2;
+  background: none;
+  border: none;
+  outline: none;
   cursor: pointer;
 }
-#nav li:nth-of-type(1) {
+.nav-toggle svg {
+  pointer-events: none;
+}
+.nav-toggle .icon--close {
+  display: none;
+}
+.nav-toggle[data-menustate="open"] .icon--close {
+  display: initial;
+}
+.nav-toggle[data-menustate="open"] .icon--menu {
+  display: none;
+}
+
+.grid-item {
+  background: #a56a44;
   position: relative;
-  left: 10px;
+  will-change: border;
 }
-#nav li:nth-of-type(1):after {
-  content: " ";
-  background: url("http://grantcr.com/files/circle.png") center center no-repeat;
+.grid-item::after {
+  content: "";
   position: absolute;
-  width: 10px;
-  height: 10px;
-  top: 7px;
-  left: 35px;
+  z-index: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 0%;
+  background: #a56a44;
+  -webkit-animation: background-swipe-out 1s cubic-bezier(0.785, 0.135, 0.15, 0.86) 2.1s 1;
+          animation: background-swipe-out 1s cubic-bezier(0.785, 0.135, 0.15, 0.86) 2.1s 1;
 }
-#nav li:nth-of-type(2) {
+.grid-item--primary {
+  grid-area: span 3 / span 6;
+  display: grid;
+  -webkit-box-align: center;
+          align-items: center;
+  justify-items: start;
+}
+.grid-item--primary > img,
+.grid-item--primary > .logo {
+  grid-area: 1 / 1 / -1 / -1;
+}
+.grid-item--secondary {
+  grid-area: span 2 / span 3;
+  -webkit-animation-duration: 1.4s;
+          animation-duration: 1.4s;
+}
+.grid-item--tertiary {
+  background: #898979;
+  grid-area: span 1 / span 2;
+  -webkit-animation-duration: 1.8s;
+          animation-duration: 1.8s;
+}
+.grid-item--content {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-pack: center;
+          justify-content: center;
+}
+.grid-item .logo {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.loading-overlay {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  place-items: center;
+  margin: -200vh -200vw;
+  will-change: transform, padding, opacity;
+  -webkit-animation: hide-overlay 2.4s cubic-bezier(0.39, 0.575, 0.565, 1) 1;
+          animation: hide-overlay 2.4s cubic-bezier(0.39, 0.575, 0.565, 1) 1;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+.loading-overlay__content {
   position: relative;
-  top: -85px;
-  left: -25px;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  padding: 50vw 50vh;
+  will-change: transform, padding, opacity;
+  -webkit-animation: rotate-expand-out 2.4s cubic-bezier(0.39, 0.575, 0.565, 1) 1;
+          animation: rotate-expand-out 2.4s cubic-bezier(0.39, 0.575, 0.565, 1) 1;
 }
-#nav li:nth-of-type(2):after {
-  content: " ";
-  background: url("http://grantcr.com/files/circle.png") center center no-repeat;
+.loading-overlay__content::after {
+  content: "";
   position: absolute;
-  width: 10px;
-  height: 10px;
-  left: 30px;
-  top: 25px;
-}
-#nav li:nth-of-type(3) {
-  position: relative;
-  top: -120px;
-}
-#nav li:nth-of-type(3):before {
-  content: " ";
-  background: url("http://grantcr.com/files/circle.png") center center no-repeat;
-  width: 10px;
-  height: 10px;
-  position: absolute;
-  top: 30px;
-  left: 12px;
-}
-#nav li:nth-of-type(4) {
-  position: relative;
-  top: -85px;
-  left: 25px;
-}
-#nav li:nth-of-type(4):before {
-  content: " ";
-  background: url("http://grantcr.com/files/circle.png") center center no-repeat;
-  width: 10px;
-  position: absolute;
-  height: 10px;
-  top: 25px;
-  left: -15px;
-}
-#nav li:nth-of-type(5) {
-  position: relative;
-  left: -15px;
-  top: -1px;
-  margin: 0;
-}
-#nav li:nth-of-type(5):before {
-  content: " ";
-  background: url("http://grantcr.com/files/circle.png") center center no-repeat;
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  left: -17px;
-  top: 8px;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  background: #a56a44;
+  will-change: width;
+  -webkit-animation: background-swipe-in 0.3s cubic-bezier(0.39, 0.575, 0.565, 1) 1;
+          animation: background-swipe-in 0.3s cubic-bezier(0.39, 0.575, 0.565, 1) 1;
 }
 
-.active > a {
-  box-shadow: 0px 0px 100px 25px rgba(255, 255, 255, 0.2);
+@-webkit-keyframes background-swipe-in {
+  from {
+    width: 0%;
+  }
 }
 
-.r0 {
-  transition: all 1s ease;
-  transform: rotate(0deg);
+@keyframes background-swipe-in {
+  from {
+    width: 0%;
+  }
 }
-
-.rr1 {
-  transition: all 1s ease;
-  transform: rotate(45deg);
+@-webkit-keyframes background-swipe-out {
+  0%, 65% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
 }
-
-.rr2 {
-  transition: all 1s ease;
-  transform: rotate(90deg);
+@keyframes background-swipe-out {
+  0%, 65% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
 }
-
-.lr1 {
-  transition: all 1s ease;
-  transform: rotate(-45deg);
+@-webkit-keyframes rotate-expand-out {
+  0%, 15%, 30%, 50%, 65%, 95%, 100% {
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+    padding: .2em 2em;
+    opacity: 1;
+  }
+  30%, 50% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    padding: 4em 2.4em;
+  }
+  65%, 95% {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+    padding: 50vw 50vh;
+  }
+  100% {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+    padding: 50vw 50vh;
+  }
 }
-
-.lr2 {
-  transition: all 1s ease;
-  transform: rotate(-90deg);
+@keyframes rotate-expand-out {
+  0%, 15%, 30%, 50%, 65%, 95%, 100% {
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+    padding: .2em 2em;
+    opacity: 1;
+  }
+  30%, 50% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    padding: 4em 2.4em;
+  }
+  65%, 95% {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+    padding: 50vw 50vh;
+  }
+  100% {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+    padding: 50vw 50vh;
+  }
+}
+@-webkit-keyframes hide-overlay {
+  0%, 90% {
+    opacity: 1;
+    visibility: visible;
+    background: white;
+  }
+  95% {
+    background: transparent;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@keyframes hide-overlay {
+  0%, 90% {
+    opacity: 1;
+    visibility: visible;
+    background: white;
+  }
+  95% {
+    background: transparent;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes expand {
+  0%, 100% {
+    width: 100%;
+  }
+  50% {
+    width: 110vw;
+  }
+}
+@keyframes expand {
+  0%, 100% {
+    width: 100%;
+  }
+  50% {
+    width: 110vw;
+  }
+}
+@-webkit-keyframes shuffle {
+  0%, 90% {
+    border-left: 0 solid #a56a44;
+  }
+  50% {
+    border-left: 2vw solid #a56a44;
+  }
+}
+@keyframes shuffle {
+  0%, 90% {
+    border-left: 0 solid #a56a44;
+  }
+  50% {
+    border-left: 2vw solid #a56a44;
+  }
 }
 </style>
 
@@ -214,8 +479,7 @@
   window.console = window.console || function(t) {};
 </script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
-
+  
   
   <script>
   if (document.location.search.match(/type=embed/gi)) {
@@ -227,166 +491,74 @@
 </head>
 
 <body translate="no" >
-  <div id="mainB">
-  <div class="bg">
-     <div class="bg1">
+  <button class="nav-toggle" data-menustate="closed">
+	<svg class="icon icon--menu" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+		<path d="M0 0h24v24H0z" fill="none"/>
+		<path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+	</svg>
+	<svg class="icon icon--close" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+		<path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+		<path d="M0 0h24v24H0z" fill="none"/>
+	</svg>
+</button>
+<nav class="nav" data-state="closed">
+	<a href="#" style="--delay: .35s">About</a>
+	<a href="#" style="--delay: .4s">Studio</a>
+	<a href="#" style="--delay: .45s">Products</a>
+	<a href="#" style="--delay: .5s">Contact</a>
+</nav>
+<header class="header" data-menustate="closed">
+	<div class="grid-item  grid-item--primary">
+		<img src="https://images.unsplash.com/photo-1485277531869-f71504d462e5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c6a0444526f6da20a3492a305b19846e&auto=format&fit=crop&w=1350&q=80" class="object-fit" alt="chair">
+		<a href="#" class="logo">
+			<h1>Kram</h1>
+		</a>
+	</div>
+	<div class="grid-item grid-item--secondary  grid-item--content">
+		<article class="article  article--align-right">
+			<h5 class="rotate rotate--right">Made in<br/>Sweden</h5>
+		</article>
+		<article class="article">
+			<h4><span>1992</span> <span>2018</span></h4>
+			<h2>Our Studio</h2>
+			<p>Within the different collections of various creative fields and directions from furniture.</p>
+		</article>
+	</div>
+	<div class="grid-item grid-item--secondary">
+		<img src="https://images.unsplash.com/photo-1496154077138-22d8a3b92e8b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2c2d9a83fdebee2ca48e816da35de74f&auto=format&fit=crop&w=1350&q=80" class="object-fit" alt="chair">
+	</div>
+	<div class="grid-item grid-item--tertiary">
+		<img src="https://images.unsplash.com/photo-1503975817393-b3891b7a3b81?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9429bb5eda4dd7617a61f11f159bc0f2&auto=format&fit=crop&w=1349&q=80" class="object-fit" alt="chair">
+	</div>
+	<div class="grid-item grid-item--tertiary grid-item--content">
+		<article class="article">
+			<p>Be the first to recieve our latest publication <a href="#">Subscribe</a></p>
+		</article>
+	</div>
+	<div class="grid-item grid-item--tertiary">
+		<img src="https://images.unsplash.com/photo-1417976528056-3c9bbbb5456c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=72f2b73c3e8892ff6a59e247557f3b47&auto=format&fit=crop&w=1350&q=80" class="object-fit" alt="chair">
+	</div>
+</header>
 
-     </div>
-  </div>
-</div>
-<div class="over">
-  <div class="dial">
-    <div class="grad">
-        
-    </div>
-  </div>
-  <div class="container">
-  <div class="nav">
-    <ul id="nav">
-      <li id="email">
-        <a>
-          <img src="http://grantcr.com/files/iemail.png" />
-        </a>
-      </li>
-      <li id="photo">
-        <a>
-          <img src="http://grantcr.com/files/iphoto.png" />
-        </a>
-      </li>
-      <li id="cloud" class="active">
-        <a>
-          <img src="http://grantcr.com/files/icloud.png" />
-        </a>
-      </li>
-      <li id="portfolio">
-        <a>
-          <img src="http://grantcr.com/files/portfolio.png" />
-        </a>
-      </li>
-      <li id="settings">
-        <a>
-          <img src="http://grantcr.com/files/settings.png" />
-        </a>
-      </li>
-    </ul>
-  </div>
-  </div>
+<div class="loading-overlay">
+	<span class="loading-overlay__content h1">Kram</span>
 </div>
     <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
 
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  
       <script id="rendered-js" >
-function doSwap() {
-  $("#nav li").each(function () {
-    if ($(this).hasClass("active")) {
-      swap($(this));
-    } else
-    {
-      swapBack($(this));
-    }
-  });
-}
-doSwap();
-function clear(o) {
-  $("#nav li").each(function () {
-    $(this).removeClass("active");
-  });
-}
-$("#nav li").click(function () {
-  clear();
-  $(this).addClass("active");
-  doSwap();
-  rotate('.dial', $(this));
+document.body.children[0].addEventListener("click", event => {
+  const nav = document.querySelector("nav");
+  const header = document.querySelector("header");
 
+  if (event.target.dataset.menustate == "closed") {
+    event.target.dataset.menustate = nav.dataset.state = header.dataset.menustate =
+    "open";
+  } else {
+    event.target.dataset.menustate = nav.dataset.state = header.dataset.menustate =
+    "closed";
+  }
 });
-
-function rotate(m, o) {
-  var id = "#" + $(o).attr("id");
-  var menu = $(m);
-
-  menu.removeClass('r0 lr1 lr2 rr1 rr2');
-
-  if (id == "#email") {
-    menu.addClass("lr2");
-  }
-  if (id == "#photo") {
-    menu.addClass('lr1');
-
-  }
-  if (id == "#cloud") {
-    menu.addClass('r0');
-  }
-  if (id == "#portfolio") {
-    menu.addClass('rr1');
-  }
-  if (id == "#settings") {
-    menu.addClass('rr2');
-  }
-
-
-}
-
-function swap(o) {
-  var id = "#" + $(o).attr("id");
-  var cimg = new String();
-  var burl = "http://grantcr.com/files/",
-  ext = ".png";
-  cimg = id + " img";
-  console.log($(cimg).attr("src"));
-
-  if (id == "#email") {
-    var nimg = burl + "iemailh" + ext;
-    $(cimg).attr("src", nimg);
-  }
-  if (id == "#photo") {
-    var nimg = burl + "photosh" + ext;
-    $(cimg).attr("src", nimg);
-  }
-  if (id == "#cloud") {
-    var nimg = burl + "icloudh" + ext;
-    $(cimg).attr("src", nimg);
-  }
-  if (id == "#portfolio") {
-    var nimg = burl + "portfolioh" + ext;
-    $(cimg).attr("src", nimg);
-  }
-  if (id == "#settings") {
-    var nimg = burl + "settingsh" + ext;
-    $(cimg).attr("src", nimg);
-  }
-
-}
-
-function swapBack(o) {
-  var id = "#" + $(o).attr("id");
-  var cimg = new String();
-  var burl = "http://grantcr.com/files/",
-  ext = ".png";
-  cimg = id + " img";
-  console.log($(cimg).attr("src"));
-
-  if (id == "#email") {
-    var nimg = burl + "iemail" + ext;
-    $(cimg).attr("src", nimg);
-  }
-  if (id == "#photo") {
-    var nimg = burl + "iphoto" + ext;
-    $(cimg).attr("src", nimg);
-  }
-  if (id == "#cloud") {
-    var nimg = burl + "icloud" + ext;
-    $(cimg).attr("src", nimg);
-  }
-  if (id == "#portfolio") {
-    var nimg = burl + "portfolio" + ext;
-    $(cimg).attr("src", nimg);
-  }
-  if (id == "#settings") {
-    var nimg = burl + "settings" + ext;
-    $(cimg).attr("src", nimg);
-  }
-
-}
 //# sourceURL=pen.js
     </script>
 
@@ -395,3 +567,4 @@ function swapBack(o) {
 </body>
 
 </html>
+ 
