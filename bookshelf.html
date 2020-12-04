@@ -2,112 +2,186 @@
 <html lang="en" >
 
 <head>
-
   <meta charset="UTF-8">
-  
-<link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
-<meta name="apple-mobile-web-app-title" content="CodePen">
-
-<link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
-
-<link rel="mask-icon" type="" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
-
-
-  <title>CodePen - Bookshelf</title>
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="shortcut icon" type="image/x-icon" href="https://github.githubassets.com/favicons/favicon.svg">
+  <title>Munister - My Books</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 
   
   
 <style>
-.book, .book img, .book::after,
-.book::before {
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
+:root {
+  --columns: 3;
+  --yellow: rgba(238, 188, 31, 1);
+  --pink: rgba(255, 82, 145, 1);
+  --blue: rgba(64, 98, 187, 1);
+  --green: rgba(6, 141, 126, 1);
+  --white: rgba(248, 255, 229, 1);
 }
 
-body,
-html {
+body{
+  background-color: #182028;
+}
+
+ul{
+  display:grid;
+  grid-template-columns: repeat(var(--columns),1fr);
+  margin: 200px -40px;
+}
+
+li{
+  grid-column-end: span 2;
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%;
+  margin-top: -50%;
+}
+
+li:nth-child(2n){
+  grid-column-start:2;
+}
+
+li::before, li::after {
+  content:'';
+  position: absolute;
+  display: block;
   width: 100%;
   height: 100%;
-  display: table;
-  text-align: center;
+  background-size: 50% 100%,50% 100%;
+  background-position: left, right;
 }
 
-body {
-  background: #fde3a7;
+li::before{
+  z-index: -10;
+  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+  -webkit-clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+  background-repeat: no-repeat;
+  background-image: linear-gradient(-45deg,var(--yellow) 53.5%,var(--green) 53.5%,var(--green) 60%,var(--yellow) 60%), linear-gradient(45deg,var(--yellow) 53.5%,var(--green) 53.5%,var(--green) 60%,var(--yellow) 60%);
 }
 
-ul {
-  display: table-cell;
-  vertical-align: middle;
+li::after{
+  clip-path: polygon(100% 50%, 50% 100%, 0 50%, 20% 50%, 50% 80%,80% 50%);
+  -webkit-clip-path: polygon(100% 50%, 50% 100%, 0 50%, 20% 50%, 50% 80%,80% 50%);
+  background-repeat: no-repeat;
+  background-image: linear-gradient(45deg,var(--yellow) 40%,var(--green) 40%), linear-gradient(-45deg,var(--yellow) 40%,var(--green) 40%);
 }
 
-.list-inline {
-  padding-left: 0;
-  list-style: none;
-}
-.list-inline > li {
-  display: inline-block;
-  margin-left: 2em;
-}
-.list-inline > li:first-child {
-  margin-left: 0;
+li:nth-child(2n)::before{
+  background-image: linear-gradient(-45deg,var(--pink) 53.5%,var(--blue) 53.5%,var(--blue) 60%,var(--pink) 60%), linear-gradient(45deg,var(--pink) 53.5%,var(--blue) 53.5%,var(--blue) 60%,var(--pink) 60%);
 }
 
-.book {
-  cursor: pointer;
-  display: block;
-  width: 150px;
-  height: 220px;
-  position: relative;
-  background: white;
-  z-index: 1;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 9px 20px 0 rgba(0, 0, 0, 0.25);
-  overflow: hidden;
-  -webkit-transition: box-shadow .3s linear;
-  transition: box-shadow .3s linear;
+li:nth-child(2n)::after{
+  background-image: linear-gradient(45deg,var(--pink) 40%,var(--blue) 40%), linear-gradient(-45deg,var(--pink) 40%,var(--blue) 40%);
 }
 
-.book img {
-  width: inherit;
-  height: inherit;
-  -webkit-transform-origin: 0 50%;
-          transform-origin: 0 50%;
-  -webkit-transform: rotateY(0);
-          transform: rotateY(0);
-  -webkit-transition: all .45s ease;
-  transition: all .45s ease;
+li:nth-child(5n)::before{
+  background-image: linear-gradient(-45deg,var(--green) 53.5%,var(--pink) 53.5%,var(--pink) 60%,var(--green) 60%), linear-gradient(45deg,var(--green) 53.5%,var(--pink) 53.5%,var(--pink) 60%,var(--green) 60%);
 }
 
-.book:hover {
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25), 0 9px 20px 0 rgba(0, 0, 0, 0.45);
-}
-.book:hover img {
-  -webkit-transform: rotateY(-25deg);
-          transform: rotateY(-25deg);
-  box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.2);
+li:nth-child(5n)::after{
+  background-image: linear-gradient(45deg,var(--green) 40%,var(--pink) 40%), linear-gradient(-45deg,var(--green) 40%,var(--pink) 40%);
 }
 
-.book::after,
-.book::before {
-  content: '';
-  display: block;
-  width: inherit;
-  height: inherit;
+li:nth-child(7n)::before,li:nth-child(7n-4)::before{
+  background-image: linear-gradient(-45deg,var(--blue) 53.5%,var(--white) 53.5%,var(--white) 60%,var(--blue) 60%), linear-gradient(45deg,var(--blue) 53.5%,var(--white) 53.5%,var(--white) 60%,var(--blue) 60%);
+}
+
+li:nth-child(7n)::after,li:nth-child(7n-4)::after{
+  background-image: linear-gradient(45deg,var(--blue) 40%,var(--white) 40%), linear-gradient(-45deg,var(--blue) 40%,var(--white) 40%);
+}
+
+li:nth-child(9n)::before,li:nth-child(9n-5)::before{
+  background-image: linear-gradient(-45deg,var(--white) 53.5%,var(--green) 53.5%,var(--green) 60%,var(--white) 60%), linear-gradient(45deg,var(--white) 53.5%,var(--green) 53.5%,var(--green) 60%,var(--white) 60%);
+}
+
+li:nth-child(9n)::after,li:nth-child(9n-5)::after{
+  background-image: linear-gradient(45deg,var(--white) 40%,var(--green) 40%), linear-gradient(-45deg,var(--white) 40%,var(--green) 40%);
+}
+
+img{
   position: absolute;
-  z-index: -1;
-  top: 0;
-  background: white;
-  border: 1px solid #d9d9d9;
+  width: 43%;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-60%);
+  box-shadow: 5px -5px 10px rgba(0, 0, 0, 0.3);
+  transition-property: transform;
+  transition-duration: .3s;
 }
 
-.book::before {
-  left: -3px;
+img:hover{
+  transform: translateX(-40%) translateY(-70%) rotatez(25deg);
 }
-
-.book::after {
-  left: -6px;
+@media (min-width:450px){
+  ul{
+    margin: 190px 40px;
+  }
+}
+@media (min-width:600px){
+  :root {
+    --columns: 5;
+  }
+  li:nth-child(2n){
+    grid-column-start:auto;
+  }
+  li:nth-child(4n-1){
+    grid-column-start:2;
+  }
+}
+@media (min-width:900px){
+  :root {
+    --columns: 7;
+  }
+  li:nth-child(4n-1){
+    grid-column-start:auto;
+  }
+  li:nth-child(6n-2){
+    grid-column-start:2;
+  }
+}
+@media (min-width:1200px){
+  :root {
+    --columns: 9;
+  }
+  li:nth-child(6n-2){
+    grid-column-start:auto;
+  }
+  li:nth-child(8n-3){
+    grid-column-start:2;
+  }
+}
+@media (min-width:1500px){
+  :root {
+    --columns: 11;
+  }
+  li:nth-child(8n-3){
+    grid-column-start:auto;
+  }
+  li:nth-child(10n-4){
+    grid-column-start:2;
+  }
+}
+@media (min-width:1800px){
+  :root {
+    --columns: 13;
+  }
+  li:nth-child(10n-4){
+    grid-column-start:auto;
+  }
+  li:nth-child(12n-5){
+    grid-column-start:2;
+  }
+}
+@media (min-width:2100px){
+  :root {
+    --columns: 15;
+  }
+  li:nth-child(12n-5){
+    grid-column-start:auto;
+  }
+  li:nth-child(14n-6){
+    grid-column-start:2;
+  }
 }
 </style>
 
@@ -127,29 +201,81 @@ ul {
 </head>
 
 <body translate="no" >
-  <ul class='list-inline'>
-  <li class='book'>
-    <img src="https://37signals.com/images/remote/remote_front.png" />
-  </li>
-
-  <li class='book'>
-    <img src='http://www.blanq.org/text/moleskine_iphone_wallpaper.jpg' />
-  </li>
-
-  <li class='book'>
-    <img src='https://d.gr-assets.com/books/1348927776l/8032112.jpg' />
-  </li>
-
-  <li class='book'>
-    <img src='http://ecx.images-amazon.com/images/I/51oXKWrcYYL.jpg' />
-  </li>
+  <ul>
+  <li><img src="https://munister-v.github.io/image/book1_resize.jpg" alt=""></li>
+  <li><img src="https://munister-v.github.io/image/book2_resize.jpg" alt=""></li>
+  <li><img src="https://munister-v.github.io/image/book3_resize.jpg" alt=""></li>
+  <li><img src="https://munister-v.github.io/image/book4_resize.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book05.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book06.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book07.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book08.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book09.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book01.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book11.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book13.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book12.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book14.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book15.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book16.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book17.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book18.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book19.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book20.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book21.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book22.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book23.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book24.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book25.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book26.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book27.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book28.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book29.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book30.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book31.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book32.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book33.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book34.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book10.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book02.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book03.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book04.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book05.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book06.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book07.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book08.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book09.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book01.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book11.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book13.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book12.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book14.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book15.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book16.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book17.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book18.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book19.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book20.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book21.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book22.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book23.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book24.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book25.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book26.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book27.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book28.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book29.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book30.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book31.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book32.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book33.jpg" alt=""></li>
+  <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book34.jpg" alt=""></li>
 </ul>
   
-  
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js'></script>
   
   
 
 </body>
 
 </html>
- 
